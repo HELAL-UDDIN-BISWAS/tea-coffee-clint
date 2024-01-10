@@ -1,0 +1,45 @@
+[
+    {
+      "type": "Tea",
+      "name": "Green Tea",
+      "origin": "China",
+      "flavor": "Grassy, Fresh",
+      "caffeine_content": "Low",
+      "short_description": "A refreshing green tea with a grassy and fresh flavor.",
+      "long_description": "Green Tea is known for its mild flavor, offering a delightful combination of grassy notes and freshness. It's a popular choice for those seeking a lighter tea with lower caffeine content.",
+      "price": 5.99,
+      "image_url": "https://example.com/green-tea.jpg"
+    },
+    {
+      "type": "Coffee",
+      "name": "Espresso",
+      "origin": "Italy",
+      "flavor": "Strong, Bold",
+      "caffeine_content": "High",
+      "short_description": "A bold and strong espresso, perfect for coffee enthusiasts.",
+      "long_description": "Espresso is a concentrated coffee with a robust and intense flavor. Sourced from high-quality Italian beans, this espresso delivers a strong and bold coffee experience.",
+      "price": 2.49,
+      "image_url": "https://example.com/espresso.jpg"
+    },
+    {
+      "type": "Tea",
+      "name": "Chamomile Tea",
+      "origin": "Egypt",
+      "flavor": "Mild, Floral",
+      "caffeine_content": "Caffeine-free",
+      "short_description": "A soothing chamomile tea with a mild and floral taste.",
+      "long_description": "Chamomile Tea is renowned for its calming properties and mild, floral flavor. Sourced from Egypt, this caffeine-free tea is perfect for relaxation and unwinding.",
+      "price": 4.99,
+      "image_url": "https://example.com/chamomile-tea.jpg"
+    },
+    {
+      "type": "Potato",
+      "name": "Russet Potato",
+      "origin": "United States",
+      "flavor": "Versatile, Earthy",
+      "short_description": "A versatile Russet potato with an earthy flavor.",
+      "long_description": "Russet Potatoes are known for their versatility and earthy flavor. Whether baked, mashed, or fried, these potatoes are a staple in many culinary dishes.",
+      "price": 1.99,
+      "image_url": "https://example.com/russet-potato.jpg"
+    }
+]
