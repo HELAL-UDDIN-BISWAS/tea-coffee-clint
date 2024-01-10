@@ -30,6 +30,12 @@ const Navber = () => {
     >
       Home
     </NavLink>
+    <NavLink to="/prodects" className={({ isActive, isPending }) =>
+      isPending ? "" : isActive ? "bg-gray-500 text-white py-2 px-4 rounded" : "text-black"
+    }
+    >
+      Products
+    </NavLink>
     <NavLink to="/contect" className={({ isActive, isPending }) =>
       isPending ? "" : isActive ? "bg-gray-500 text-white py-2 px-4 rounded" : "text-black"
     }

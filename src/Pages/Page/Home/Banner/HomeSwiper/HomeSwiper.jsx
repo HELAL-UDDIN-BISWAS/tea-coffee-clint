@@ -16,12 +16,12 @@ const HomeSwiper = () => {
                 onSlideChange={() => console.log('slide change')}
                 onSwiper={(swiper) => console.log(swiper)}
             >
-                <SwiperSlide><img className='h-[450px] rounded' src={tea} alt="" /></SwiperSlide>
-                <SwiperSlide><img className='h-[450px] rounded'  src={tea3} alt="" /></SwiperSlide>
-                <SwiperSlide><img className='h-[450px] rounded'  src={tea2} alt="" /></SwiperSlide>
-                <SwiperSlide><img className='h-[450px] rounded'  src={tea4} alt="" /></SwiperSlide>
-                <SwiperSlide><img className='h-[450px] rounded'  src={tea1} alt="" /></SwiperSlide>
-                <SwiperSlide><img className='h-[450px] rounded'  src={tea5} alt="" /></SwiperSlide> 
+                <SwiperSlide><img className='h-[450px] hover:cursor-pointer rounded' src={tea} alt="" /></SwiperSlide>
+                <SwiperSlide><img className='h-[450px] hover:cursor-pointer rounded'  src={tea3} alt="" /></SwiperSlide>
+                <SwiperSlide><img className='h-[450px] hover:cursor-pointer rounded'  src={tea2} alt="" /></SwiperSlide>
+                <SwiperSlide><img className='h-[450px] hover:cursor-pointer rounded'  src={tea4} alt="" /></SwiperSlide>
+                <SwiperSlide><img className='h-[450px] hover:cursor-pointer rounded'  src={tea1} alt="" /></SwiperSlide>
+                <SwiperSlide><img className='h-[450px] hover:cursor-pointer rounded'  src={tea5} alt="" /></SwiperSlide> 
                 <p className='text-center text-3xl'> ... </p>       
                
             </Swiper>
