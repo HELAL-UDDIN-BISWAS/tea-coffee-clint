@@ -7,6 +7,7 @@ import { Badge,
       Heart,
       ShoppingCart,
     } from "phosphor-react";
+    
 const Prodects = () => {
     const { data } = useQuery({
         queryKey: ['data'],
@@ -19,11 +20,11 @@ const Prodects = () => {
       console.log(data)
     
     return (
-        <div>
-            <div>
+        <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-3 w-full mx-auto gap-3 items-center justify-center text-center">
                 {
-                    data?.map(product=><div>     <Card
-                        className="max-w-xs overflow-hidden rounded-md"
+                    data?.map(product=><div><Card
+                        className="max-w-xs w-96 overflow-hidden rounded-md"
                         imgSrc="https://images.prismic.io/staticmania/45ce2799-f29b-462f-a795-5d3d5d10c9ad_product-1.avif?auto=compress,format"
                         imgSize="md">
                         <Card.Container className="absolute right-3.5 top-3.5 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-metal-50/50">
