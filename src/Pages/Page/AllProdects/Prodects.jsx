@@ -21,7 +21,7 @@ const Prodects = () => {
     
     return (
         <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-3 w-full mx-auto gap-3 items-center justify-center text-center">
+            <div className="grid lg:grid-cols-3 md:grid-cols-1 w-full mx-auto gap-3 items-center justify-center text-center">
                 {
                     data?.map(product=><div><Card
                         className="max-w-xs w-96 overflow-hidden rounded-md"
