@@ -5,6 +5,8 @@ import Contect from "../Pages/Page/Contect/Contect";
 import SignUp from "../Pages/SignUp/SignUp";
 import Login from "../Pages/Login/Login";
 import Prodects from "../Pages/Page/AllProdects/Prodects";
+import Dashboard from "../Dashboard/Dashboard";
+import AddProdect from "../Dashboard/pages/AddProdect/AddProdect";
 
 const router = createBrowserRouter([
     {
@@ -33,5 +35,16 @@ const router = createBrowserRouter([
         }
       ],
     },
+    {
+      path: "dashboard",
+      element:<Dashboard></Dashboard>,
+     children: [
+      {
+        path:"",
+        element:<AddProdect></AddProdect>
+      }
+     ]
+      
+    }
   ]);
   export default router;

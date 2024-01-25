@@ -42,6 +42,12 @@ const Navber = () => {
     >
       Contect
     </NavLink>
+    <NavLink to="/dashboard" className={({ isActive, isPending }) =>
+      isPending ? "" : isActive ? "bg-gray-500 text-white py-2 px-4 rounded" : "text-black"
+    }
+    >
+      Dashboard
+    </NavLink>
   </>
 
   return (
