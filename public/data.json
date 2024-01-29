@@ -1,4 +1,125 @@
 [
+  
+    {
+      "type": "Tea",
+      "name": "Green Tea",
+      "origin": "China",
+      "flavor": "Grassy, Fresh",
+      "caffeine_content": "Low",
+      "short_description": "A refreshing green tea with a grassy and fresh flavor.",
+      "long_description": "Green Tea is known for its mild flavor, offering a delightful combination of grassy notes and freshness. It's a popular choice for those seeking a lighter tea with lower caffeine content.",
+      "price": 5.99,
+      "image_url": "https://example.com/green-tea.jpg"
+    },
+    {
+      "type": "Tea",
+      "name": "Black Tea",
+      "origin": "India",
+      "flavor": "Bold, Malty",
+      "caffeine_content": "Moderate",
+      "short_description": "A robust black tea with a bold and malty flavor.",
+      "long_description": "Black Tea is known for its strong and full-bodied taste. It's often enjoyed with or without milk and is a popular choice for those who prefer a heartier tea.",
+      "price": 4.99,
+      "image_url": "https://example.com/black-tea.jpg"
+    },
+    {
+      "type": "Tea",
+      "name": "Oolong Tea",
+      "origin": "Taiwan",
+      "flavor": "Fruity, Floral",
+      "caffeine_content": "Moderate",
+      "short_description": "An aromatic oolong tea with fruity and floral notes.",
+      "long_description": "Oolong Tea is a partially oxidized tea that falls between green and black tea. It offers a unique combination of fruity and floral flavors, making it a favorite among tea enthusiasts.",
+      "price": 6.49,
+      "image_url": "https://example.com/oolong-tea.jpg"
+    },
+    {
+      "type": "Tea",
+      "name": "Chamomile Tea",
+      "origin": "Egypt",
+      "flavor": "Mild, Relaxing",
+      "caffeine_content": "Caffeine-Free",
+      "short_description": "A soothing chamomile tea with a mild and relaxing flavor.",
+      "long_description": "Chamomile Tea is known for its calming properties and gentle flavor. It's caffeine-free and often enjoyed before bedtime to promote relaxation and better sleep.",
+      "price": 7.99,
+      "image_url": "https://example.com/chamomile-tea.jpg"
+    },
+    {
+      "type": "Tea",
+      "name": "Earl Grey",
+      "origin": "Various",
+      "flavor": "Citrusy, Bergamot",
+      "caffeine_content": "Moderate",
+      "short_description": "A classic Earl Grey tea with a citrusy and bergamot-infused flavor.",
+      "long_description": "Earl Grey is a black tea flavored with oil of bergamot, a citrus fruit. It's a timeless and aromatic tea that has gained popularity for its unique and refreshing taste.",
+      "price": 5.99,
+      "image_url": "https://example.com/earl-grey-tea.jpg"
+    },
+    {
+      "type": "Tea",
+      "name": "Jasmine Tea",
+      "origin": "China",
+      "flavor": "Floral, Fragrant",
+      "caffeine_content": "Low",
+      "short_description": "A fragrant jasmine tea with floral and sweet undertones.",
+      "long_description": "Jasmine Tea is scented with jasmine blossoms, imparting a delicate floral aroma to the tea. It has a mild and sweet flavor, making it a popular choice for tea lovers.",
+      "price": 6.99,
+      "image_url": "https://example.com/jasmine-tea.jpg"
+    },
+    {
+      "type": "Tea",
+      "name": "White Tea",
+      "origin": "China",
+      "flavor": "Subtle, Delicate",
+      "caffeine_content": "Low",
+      "short_description": "A subtle and delicate white tea with a mild flavor profile.",
+      "long_description": "White Tea is minimally processed, allowing the natural flavors of the tea leaves to shine. It offers a gentle and nuanced taste, making it a favorite among those who appreciate subtlety.",
+      "price": 8.49,
+      "image_url": "https://example.com/white-tea.jpg"
+    },
+    {
+      "type": "Tea",
+      "name": "Pu-erh Tea",
+      "origin": "China",
+      "flavor": "Earthy, Mellow",
+      "caffeine_content": "Moderate",
+      "short_description": "An earthy and mellow pu-erh tea with unique fermentation characteristics.",
+      "long_description": "Pu-erh Tea undergoes fermentation, resulting in a distinct earthy flavor. It's known for its mellow taste and is often aged to enhance its complexity.",
+      "price": 9.99,
+      "image_url": "https://example.com/pu-erh-tea.jpg"
+    },
+    {
+      "type": "Tea",
+      "name": "Herbal Tea",
+      "origin": "Various",
+      "flavor": "Varied",
+      "caffeine_content": "Caffeine-Free",
+      "short_description": "A collection of herbal teas with diverse flavors and health benefits.",
+      "long_description": "Herbal Tea encompasses a variety of infusions made from herbs, fruits, and flowers. Each herbal blend offers a unique flavor profile and potential health benefits, making it a versatile and caffeine-free option.",
+      "price": 7.99,
+      "image_url": "https://example.com/herbal-tea.jpg"
+    },
+    {
+      "type": "Tea",
+      "name": "Matcha",
+      "origin": "Japan",
+      "flavor": "Rich, Umami",
+      "caffeine_content": "Moderate",
+      "short_description": "A premium matcha tea with a rich and umami flavor profile.",
+      "long_description": "Matcha is a powdered green tea known for its vibrant green color and concentrated flavor. It's often used in traditional Japanese tea ceremonies and has a unique and intense taste.",
+      "price": 12.99,
+      "image_url": "https://example.com/matcha-tea.jpg"
+    },
+    {
+      "type": "Tea",
+      "name": "Hibiscus Tea",
+      "origin": "Various",
+      "flavor": "Tart, Floral",
+      "caffeine_content": "Caffeine-Free",
+      "short_description": "A tart and floral hibiscus tea with a vibrant red hue.",
+      "long_description": "Hibiscus Tea is made from the dried petals of the hibiscus flower. It has a naturally tart and floral flavor, and its vibrant red color adds to the visual appeal of the tea.",
+      "price": 6.49,
+      "image_url": "https://example.com/"},
     {
       "type": "Tea",
       "name": "Green Tea",
@@ -20,6 +141,72 @@
       "long_description": "Espresso is a concentrated coffee with a robust and intense flavor. Sourced from high-quality Italian beans, this espresso delivers a strong and bold coffee experience.",
       "price": 2.49,
       "image_url": "https://example.com/espresso.jpg"
+    },
+    {
+      "type": "Coffee",
+      "name": "Cappuccino",
+      "origin": "Italy",
+      "flavor": "Creamy, Frothy",
+      "caffeine_content": "Moderate",
+      "short_description": "A classic cappuccino with a creamy and frothy texture.",
+      "long_description": "Cappuccino is an espresso-based coffee topped with equal parts of steamed milk and foam. It has a rich and creamy texture, making it a favorite choice for those who enjoy a luxurious coffee experience.",
+      "price": 4.99,
+      "image_url": "https://example.com/cappuccino.jpg"
+    },
+    {
+      "type": "Coffee",
+      "name": "Cold Brew",
+      "origin": "Various",
+      "flavor": "Smooth, Bold",
+      "caffeine_content": "High",
+      "short_description": "A refreshing cold brew coffee with a smooth and bold flavor.",
+      "long_description": "Cold Brew is made by steeping coarse coffee grounds in cold water for an extended period, resulting in a smoother and less acidic coffee. It's often served over ice for a refreshing beverage.",
+      "price": 5.49,
+      "image_url": "https://example.com/cold-brew.jpg"
+    },
+    {
+      "type": "Coffee",
+      "name": "Latte",
+      "origin": "Italy",
+      "flavor": "Mild, Creamy",
+      "caffeine_content": "Moderate",
+      "short_description": "A comforting latte with a mild and creamy flavor.",
+      "long_description": "Latte is an espresso-based coffee with steamed milk and a small amount of foam. It has a balanced and comforting flavor, making it a popular choice for those who enjoy a milder coffee experience.",
+      "price": 5.99,
+      "image_url": "https://example.com/latte.jpg"
+    },
+    {
+      "type": "Coffee",
+      "name": "Americano",
+      "origin": "United States",
+      "flavor": "Bold, Robust",
+      "caffeine_content": "High",
+      "short_description": "An invigorating Americano with a bold and robust coffee flavor.",
+      "long_description": "Americano is made by diluting espresso with hot water, resulting in a coffee with a strength similar to drip coffee but with a distinct espresso flavor. It's a go-to choice for those who prefer a stronger cup.",
+      "price": 4.49,
+      "image_url": "https://example.com/americano.jpg"
+    },
+    {
+      "type": "Coffee",
+      "name": "Mocha",
+      "origin": "Various",
+      "flavor": "Chocolatey, Rich",
+      "caffeine_content": "Moderate",
+      "short_description": "A decadent mocha with a chocolatey and rich coffee flavor.",
+      "long_description": "Mocha combines espresso with steamed milk and chocolate syrup, creating a delightful and indulgent coffee experience. It's a favorite for those with a sweet tooth.",
+      "price": 6.49,
+      "image_url": "https://example.com/mocha.jpg"
+    },
+    {
+      "type": "Coffee",
+      "name": "Single-Origin Ethiopian",
+      "origin": "Ethiopia",
+      "flavor": "Fruity, Floral",
+      "caffeine_content": "High",
+      "short_description": "A single-origin Ethiopian coffee with fruity and floral notes.",
+      "long_description": "Ethiopian coffee is known for its unique and vibrant flavor profile. This single-origin variety offers distinct fruity and floral notes, showcasing the diverse tastes found in Ethiopian coffee beans.",
+      "price": 7.99,
+      "image_url": "https://example.com/single-origin-ethiopian.jpg"
     },
     {
       "type": "Tea",
