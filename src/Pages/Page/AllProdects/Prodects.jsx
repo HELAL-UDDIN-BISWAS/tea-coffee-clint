@@ -12,7 +12,7 @@ const Prodects = () => {
     const { data } = useQuery({
         queryKey: ['data'],
         queryFn: () =>
-          fetch('/data.json').then((res) =>
+          fetch('http://localhost:5000/allproducts').then((res) =>
             res.json(),
 
           ),
