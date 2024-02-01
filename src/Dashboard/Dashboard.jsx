@@ -45,8 +45,8 @@ const Dashboard = () => {
                             Our Progress
                         </Sidebar.Item>
 
-                        <Sidebar.Item href="#" icon={<LockKey size={24} />}>
-                            Security
+                        <Sidebar.Item href="/" icon={<LockKey size={24} />}>
+                            Home
                         </Sidebar.Item>
 
                     </Sidebar.ItemGroup>
