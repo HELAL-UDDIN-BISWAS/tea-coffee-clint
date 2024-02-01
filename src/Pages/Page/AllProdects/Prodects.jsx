@@ -7,8 +7,7 @@ import { Badge,
       Heart,
       ShoppingCart,
     } from "phosphor-react";
-import { Link } from "react-router-dom";
-    
+import { Link } from "react-router-dom";  
 const Prodects = () => {
     const { data } = useQuery({
         queryKey: ['data'],
@@ -25,7 +24,6 @@ const Prodects = () => {
             <div className="grid lg:grid-cols-3 md:grid-cols-1 w-full mx-auto gap-3 items-center justify-center text-center">
                 {
                     data?.map(product=><div><Card
-                   
                         className="max-w-xs w-96 overflow-hidden rounded-md"
                         imgSrc={product.image_url}
                         imgSize="md">
@@ -45,16 +43,13 @@ const Prodects = () => {
                              {product.short_description}
                             </Card.Description>
                           </Card.Container>
-                          <Card.Container className="flex items-center justify-start gap-5">
+                          <Card.Container className="flex items-center justify-start gap-5">       
+                            <Link to={`/detailsproduct/${product._id}`}>
                             <Button size="sm" type="outlineGray">
                               <span className="pr-2">
                                 <ShoppingCart size={24} />
                               </span>
                               Add To Cart
-                            </Button>
-                            <Link to={`/detailsproduct/${product._id}`}>
-                            <Button size="sm" type="outlineGray">
-                              See More
                             </Button>
                             </Link>                         
                           </Card.Container>
