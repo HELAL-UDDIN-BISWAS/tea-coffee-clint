@@ -9,14 +9,14 @@ const Home = () => {
         <div>
             <div>
                 <Banner></Banner>
-                <TextStyle pragraph={'From 11:00am to 10:00pm'}hading={'ORDER ONLINE'}></TextStyle>
+                <TextStyle pragraph={'From 11:00am to 10:00pm'} hading={'ORDER ONLINE'}></TextStyle>
             </div>
             <div className='max-w-6xl mx-auto'>
                 <HomeSwiper></HomeSwiper>
 
                 <div className='my-7'>
                     <Topsale></Topsale>
-                <TextStyle pragraph={'Check it out'}hading={'FROM OUR MENU'}></TextStyle>
+                    <TextStyle pragraph={'Check it out'} hading={'FROM OUR MENU'}></TextStyle>
                 </div>
             </div>
 
