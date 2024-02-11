@@ -1,9 +1,40 @@
 import React from 'react';
 
 const Contect = () => {
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        // Log form values
+        console.log("Name:", form.current.user_name.value);
+        console.log("Email:", form.current.user_email.value);
+        console.log("Message:", form.current.message.value);
+
+        emailjs
+            .sendForm(
+                "service_3jskkuc",
+                "template_upmm4sl",
+                form.current,
+                "hAj2KjKC5N2pIHhr-"
+            )
+            .then(
+                (result) => {
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Your work has been saved",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    console.log(result.text);
+                    console.log("message sent");
+                },
+                (error) => {
+                    console.log(error.text);
+                }
+            );
+    };
     return (
         <div className="min-h-[60vh] flex mt-14 mb-20">
-
         <div className="md:flex gap-20 md:w-9/12 items-center justify-center p-3 mx-auto">
             <form ref={form} onSubmit={sendEmail} className="flex flex-1  flex-col space-y-5">
                 <input required type="text" name="user_name" placeholder="Name" className="bordered input border rounded-full bg-slate-100 p-4  " />
