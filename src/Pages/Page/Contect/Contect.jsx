@@ -9,8 +9,8 @@ import { useRef } from "react";
 import Swal from "sweetalert2";
 
 const Contect = () => {
+    const form = useRef();
     const sendEmail = (e) => {
-        const form = useRef();
         e.preventDefault();
 
         // Log form values
