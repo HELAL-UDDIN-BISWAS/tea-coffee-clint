@@ -1,7 +1,16 @@
-import React from 'react';
+import { Link } from "react-router-dom";
+import { MdEmail } from "react-icons/md";
+import { FaPhone } from "react-icons/fa6";
+import { FaFacebookF } from "react-icons/fa";
+import { FaGoogle } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa";
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
+import Swal from "sweetalert2";
 
 const Contect = () => {
     const sendEmail = (e) => {
+        const form = useRef();
         e.preventDefault();
 
         // Log form values
