@@ -46,8 +46,8 @@ const Contect = () => {
         <div className="min-h-[60vh] flex mt-14 mb-20">
         <div className="md:flex gap-20 md:w-9/12 items-center justify-center p-3 mx-auto">
             <form ref={form} onSubmit={sendEmail} className="flex flex-1  flex-col space-y-5">
-                <input required type="text" name="user_name" placeholder="Name" className="bordered input border rounded-full bg-slate-100 p-4  " />
-                <input required type="email" name="user_email" placeholder="Email" className="bordered input border rounded-full bg-slate-100 p-4  " />
+                <input required type="text" name="user_name" placeholder="Name" className="bordered input border rounded bg-slate-100 p-3  " />
+                <input required type="email" name="user_email" placeholder="Email" className="bordered input border rounded bg-slate-100 p-3  " />
                 <textarea required name="message" placeholder="Write your Message" className=" rounded-full bg-slate-100 p-4 h-20  "></textarea>
                 <input type="submit" className="btn border rounded-full bg-slate-100 p-4  " />
             </form>
