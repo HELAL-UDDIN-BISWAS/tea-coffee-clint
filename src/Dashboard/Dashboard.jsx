@@ -29,17 +29,17 @@ const Dashboard = () => {
                             </Sidebar.Item>
                         </Sidebar.Collapse>
 
-                   <Link to={"allprodect"}>
                    <Sidebar.Item href="#" icon={<MdOutlineDeleteOutline size={24} />}>
                             Delete
                         </Sidebar.Item>
-                   </Link>
                         <Sidebar.Item href="#" icon={<Users size={24} />}>
                             Users
                         </Sidebar.Item>
+                        <Link to={"allprodect"}>
                         <Sidebar.Item href="#" icon={<ShoppingBagOpen size={24} />}>
                             Products
                         </Sidebar.Item>
+                        </Link>
                     </Sidebar.ItemGroup>
                     <Sidebar.ItemGroup>
                         <Sidebar.Item href="#" icon={<TreeStructure size={24} />}>

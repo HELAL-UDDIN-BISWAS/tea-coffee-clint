@@ -8,7 +8,7 @@ import Prodects from "../Pages/Page/AllProdects/Prodects";
 import Dashboard from "../Dashboard/Dashboard";
 import AddProdect from "../Dashboard/pages/AddProdect/AddProdect";
 import Detailsproduct from "../Pages/Page/DetailsProduct/Detailsproduct";
-import DeleteProdect from "../Dashboard/pages/DeleteProdect/DeleteProdect";
+import AllProdect from "../Dashboard/pages/AllProdect/AllProdect";
 
 const router = createBrowserRouter([
     {
@@ -51,8 +51,8 @@ const router = createBrowserRouter([
         element:<AddProdect></AddProdect>
       },
       {
-        path:"delete",
-        element:<DeleteProdect></DeleteProdect>
+        path:"allprodect",
+        element:<AllProdect></AllProdect>
       }
      ]
       
