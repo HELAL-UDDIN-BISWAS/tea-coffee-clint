@@ -10,7 +10,8 @@ import {
     TreeStructure,
     Users,
 } from "phosphor-react";
-import { Outlet } from "react-router-dom";
+import { MdOutlineDeleteOutline } from "react-icons/md";
+import { Link, Outlet } from "react-router-dom";
 
 
 const Dashboard = () => {
@@ -27,9 +28,12 @@ const Dashboard = () => {
                                 Products
                             </Sidebar.Item>
                         </Sidebar.Collapse>
-                        <Sidebar.Item href="#" icon={<Chat size={24} />}>
-                            Inbox
+
+                   <Link to={"allprodect"}>
+                   <Sidebar.Item href="#" icon={<MdOutlineDeleteOutline size={24} />}>
+                            Delete
                         </Sidebar.Item>
+                   </Link>
                         <Sidebar.Item href="#" icon={<Users size={24} />}>
                             Users
                         </Sidebar.Item>

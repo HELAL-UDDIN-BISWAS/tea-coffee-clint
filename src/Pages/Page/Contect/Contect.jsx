@@ -48,8 +48,8 @@ const Contect = () => {
             <form ref={form} onSubmit={sendEmail} className="flex flex-1  flex-col space-y-5">
                 <input required type="text" name="user_name" placeholder="Name" className="bordered input border rounded bg-slate-100 p-3  " />
                 <input required type="email" name="user_email" placeholder="Email" className="bordered input border rounded bg-slate-100 p-3  " />
-                <textarea required name="message" placeholder="Write your Message" className=" rounded-full bg-slate-100 p-4 h-20  "></textarea>
-                <input type="submit" className="btn border rounded-full bg-slate-100 p-4  " />
+                <textarea required name="message" placeholder="Write your Message" className=" rounded bg-slate-100 p-3 h-20  "></textarea>
+                <input type="submit" className="btn border rounded hover:cursor-pointer hover:bg-slate-400 bg-slate-100 p-3  " />
             </form>
             <div className="flex-1 mt-10">
             <div>
