@@ -1,9 +1,37 @@
 import { useQuery } from "@tanstack/react-query";
+import Swal from "sweetalert2";
 
 const AllProdect = () => {
 
-    const deleteData=()=>{
-        console.log('hello world')
+    const deleteData=(id)=>{
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          })
+            .then((result) => {
+              if (result.isConfirmed) {
+                fetch(`https://y-tau-one.vercel.app/deletecamp/${id}`, {
+                  method: "DELETE",
+                })
+                  .then(res => res.json())
+                  .then(data => {
+                    if (data.deletedCount > 0) {
+                      refetch()
+                      Swal.fire({
+                        title: 'success',
+                        text: 'Do you want to continue',
+                        icon: 'success',
+                        confirmButtonText: 'DELETE'
+                      })
+                    }
+                  })
+              }
+            });
     }
     const { data } = useQuery({
         queryKey: [],
@@ -35,7 +63,7 @@ const AllProdect = () => {
                             <td className="py-2 px-4 border-b">{datas.flavor}</td>
                             <td className="py-2 px-4 border-b">
                                 <button className="text-blue-500">Edit</button>
-                                <button onClick={deleteData} className="text-red-500 ml-2">Delete</button>
+                                <button onClick={()=>deleteData(datas._id)} className="text-red-500 ml-2">Delete</button>
                             </td>
                         </tr>)
                         }                   
