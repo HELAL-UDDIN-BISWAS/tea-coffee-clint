@@ -9,21 +9,21 @@ import { Badge,
     } from "phosphor-react";
 import { Link } from "react-router-dom";  
 const Prodects = () => {
-    const { data } = useQuery({
+    const { data: alldata } = useQuery({
         queryKey: ['data'],
-        queryFn: () =>
-          fetch('http://localhost:5000/allproducts').then((res) =>
+        queryFn: async() =>
+        await  fetch('http://localhost:5000/allproducts').then((res) =>
             res.json(),
 
           ),
       })
-      console.log(data)
+      console.log(alldata)
     
     return (
         <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-3 md:grid-cols-1 w-full mx-auto gap-3 items-center justify-center text-center">
                 {
-                    data?.map(product=><div><Card
+                    alldata?.map(product=><div><Card
                         className="max-w-xs w-96 overflow-hidden rounded-md"
                         imgSrc={product.image_url}
                         imgSize="md">
