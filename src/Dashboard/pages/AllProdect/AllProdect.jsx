@@ -2,7 +2,11 @@ import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
 
 const AllProdect = () => {
-
+   const {refetch, data } = useQuery({
+        queryKey: [],
+        queryFn: () => fetch('http://localhost:5000/allproducts')
+            .then((res) => res.json())
+    })
     const deleteData=(id)=>{
         Swal.fire({
             title: 'Are you sure?',
@@ -15,7 +19,7 @@ const AllProdect = () => {
           })
             .then((result) => {
               if (result.isConfirmed) {
-                fetch(`https://y-tau-one.vercel.app/deletecamp/${id}`, {
+                fetch(`http://localhost:5000/deleteproduct/${id}`, {
                   method: "DELETE",
                 })
                   .then(res => res.json())
@@ -33,11 +37,6 @@ const AllProdect = () => {
               }
             });
     }
-    const { data } = useQuery({
-        queryKey: [],
-        queryFn: () => fetch('http://localhost:5000/allproducts')
-            .then((res) => res.json())
-    })
     console.log(data)
     return (
         <div className="p-2">
