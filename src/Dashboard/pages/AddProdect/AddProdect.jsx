@@ -2,9 +2,9 @@ import React from 'react';
 
 const AddProdect = () => {
     return (
-        <div className=''>
+        <div className=' md:ml-10 m-4'>
            <form className=''>
-           <div className=' grid md:ml-10 m-4 md:grid-cols-2 gap-3'>
+           <div className=' grid  md:grid-cols-2 gap-3'>
                     <div className="w-full">
                         <label className='block'>
                             <span>Type</span>
@@ -63,12 +63,7 @@ const AddProdect = () => {
 
                    
                 </div>
-                <div className="w-full items-center">
-                        <label className='block'>
-                            <span>Long Description</span>
-                        </label>
-                        <input type="password" className="md:w-72 bg-white px-4 py-2 text-lg outline-none border-2 rounded hover:border-gray-600 border-gray-400 duration-200 bg-inherit" placeholder='long_description' required />
-                    </div>
+                <textarea required name="message" placeholder="Write your Message" className=" rounded bg-slate-100 p-3 h-20 md:w-96 my-3"></textarea>
            </form>
         </div>
     );
