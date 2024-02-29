@@ -4,10 +4,10 @@ import { useForm } from 'react-hook-form';
 const AddProdect = () => {
     const { register, handleSubmit } = useForm();
    const onSubmit=(data)=>{
-   console.log(data.type)
+   console.log(data.type,data.longdescription)
    }
     return (
-        <div className=' md:ml-10 m-4'>
+        <div className='  md:ml-10 m-4'>
            <form className=''  onSubmit={handleSubmit(onSubmit)}>
            <div className=' grid  md:grid-cols-2 gap-3'>
                     <div className="w-full">
@@ -21,35 +21,35 @@ const AddProdect = () => {
                         <label className='block'>
                             <span>Price</span>
                         </label>
-                        <input type="password" className="md:w-72 bg-white px-4 py-2 text-lg outline-none border-2 rounded hover:border-gray-600 border-gray-400 duration-200 bg-inherit" placeholder='Price' required />
+                        <input type="text" {...register('price')} className="md:w-72 bg-white px-4 py-2 text-lg outline-none border-2 rounded hover:border-gray-600 border-gray-400 duration-200 bg-inherit" placeholder='Price' required />
                     </div>
 
                     <div className="w-full">
                         <label className='block'>
                             <span>Origin</span>
                         </label>
-                        <input type="password" className="md:w-72 bg-white px-4 py-2 text-lg outline-none border-2 rounded hover:border-gray-600 border-gray-400 duration-200 bg-inherit" placeholder='Origin' required />
+                        <input type="text" {...register('origin')} className="md:w-72 bg-white px-4 py-2 text-lg outline-none border-2 rounded hover:border-gray-600 border-gray-400 duration-200 bg-inherit" placeholder='Origin' required />
                     </div>
 
                     <div className="w-full">
                         <label className='block'>
                             <span>Flavor</span>
                         </label>
-                        <input type="password" className="md:w-72 bg-white px-4 py-2 text-lg outline-none border-2 rounded hover:border-gray-600 border-gray-400 duration-200 bg-inherit" placeholder='Flavor' required />
+                        <input type="text" {...register('flavor')} className="md:w-72 bg-white px-4 py-2 text-lg outline-none border-2 rounded hover:border-gray-600 border-gray-400 duration-200 bg-inherit" placeholder='Flavor' required />
                     </div>
 
                     <div className="w-full">
                         <label className='block'>
                             <span>Caffeine Content</span>
                         </label>
-                        <input type="password" className="md:w-72 bg-white px-4 py-2 text-lg outline-none border-2 rounded hover:border-gray-600 border-gray-400 duration-200 bg-inherit" placeholder='caffeine_content' required />
+                        <input type="text" className="md:w-72 bg-white px-4 py-2 text-lg outline-none border-2 rounded hover:border-gray-600 border-gray-400 duration-200 bg-inherit" placeholder='caffeine_content' required />
                     </div>
 
                     <div className="w-full">
                         <label className='block'>
                             <span>Short Description</span>
                         </label>
-                        <input type="password" className="md:w-72 bg-white px-4 py-2 text-lg outline-none border-2 rounded hover:border-gray-600 border-gray-400 duration-200 bg-inherit" placeholder='short_description' required />
+                        <input type="text" className="md:w-72 bg-white px-4 py-2 text-lg outline-none border-2 rounded hover:border-gray-600 border-gray-400 duration-200 bg-inherit" placeholder='short_description' required />
                     </div>
 
                     <div className="w-full">
@@ -63,12 +63,12 @@ const AddProdect = () => {
                         <label className='block'>
                             <span>Image</span>
                         </label>
-                        <input type="text" className="md:w-72 bg-white px-4 py-2 text-lg outline-none border-2 rounded hover:border-gray-600 border-gray-400 duration-200 bg-inherit" placeholder='Product_Name' required />
+                        <input type="file" required />
                     </div>
 
                    
                 </div>
-                <textarea required name="message" placeholder="Long Description " className=" rounded bg-slate-100 p-3 h-20 md:w-96 my-3"></textarea>
+                <textarea {...register('longdescription')} required name="message" placeholder="Long Description " className=" rounded bg-slate-100 p-3 h-20 md:w-96 my-3"></textarea>
                 <button>dfsdfd</button>
            </form>
         </div>
