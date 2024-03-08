@@ -1,10 +1,18 @@
+import axios from 'axios';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
 const AddProdect = () => {
     const { register, handleSubmit } = useForm();
-   const onSubmit=(data)=>{
-   console.log(data.type,data.longdescription)
+   const onSubmit=async(data)=>{
+    const imageFile = new FormData();
+        imageFile.append('image', data.photo[0]);
+        console.log(imageFile)
+        const {data: imageData} = await axios.post('https://api.imgbb.com/1/upload?key=b425eed4264500ee966fabfc8c973be7', imageFile)
+        console.log(imageData)
+
+        
+   console.log(data.type,data.longdescription,data.photo)
    }
     return (
         <div className='  md:ml-10 m-4'>
@@ -42,33 +50,38 @@ const AddProdect = () => {
                         <label className='block'>
                             <span>Caffeine Content</span>
                         </label>
-                        <input type="text" className="md:w-72 bg-white px-4 py-2 text-lg outline-none border-2 rounded hover:border-gray-600 border-gray-400 duration-200 bg-inherit" placeholder='caffeine_content' required />
+                        <input type="text" {...register('caffeinecontent')} className="md:w-72 bg-white px-4 py-2 text-lg outline-none border-2 rounded hover:border-gray-600 border-gray-400 duration-200 bg-inherit" placeholder='caffeine_content' required />
                     </div>
 
                     <div className="w-full">
                         <label className='block'>
                             <span>Short Description</span>
                         </label>
-                        <input type="text" className="md:w-72 bg-white px-4 py-2 text-lg outline-none border-2 rounded hover:border-gray-600 border-gray-400 duration-200 bg-inherit" placeholder='short_description' required />
+                        <input type="text" {...register('shortdescription')} className="md:w-72 bg-white px-4 py-2 text-lg outline-none border-2 rounded hover:border-gray-600 border-gray-400 duration-200 bg-inherit" placeholder='short_description' required />
                     </div>
 
                     <div className="w-full">
                         <label className='block'>
                             <span>Product Name</span>
                         </label>
-                        <input type="text" className="md:w-72 bg-white px-4 py-2 text-lg outline-none border-2 rounded hover:border-gray-600 border-gray-400 duration-200 bg-inherit" placeholder='Product_Name' required />
+                        <input type="text" {...register('productname')} className="md:w-72 bg-white px-4 py-2 text-lg outline-none border-2 rounded hover:border-gray-600 border-gray-400 duration-200 bg-inherit" placeholder='Product_Name' required />
                     </div>
 
                     <div className="w-full">
                         <label className='block'>
                             <span>Image</span>
                         </label>
-                        <input type="file" required />
-                    </div>
+                        <input {...register('photo')} type="file" required />
+                    </div>                
 
-                   
+                    <div className="w-full">
+                        <label className='block'>
+                            <span>Product Name</span>
+                        </label>
+                        <input type="text" {...register('longdescription')}  className="md:w-72 bg-white px-4 py-2 text-lg outline-none border-2 rounded hover:border-gray-600 border-gray-400 duration-200 bg-inherit" placeholder='Product_Name' required />
+                    </div>     
                 </div>
-                <textarea {...register('longdescription')} required name="message" placeholder="Long Description " className=" rounded bg-slate-100 p-3 h-20 md:w-96 my-3"></textarea>
+                
                 <button>dfsdfd</button>
            </form>
         </div>
