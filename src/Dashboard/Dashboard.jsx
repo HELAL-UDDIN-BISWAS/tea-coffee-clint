@@ -17,7 +17,7 @@ import { Link, Outlet } from "react-router-dom";
 const Dashboard = () => {
     return (
         <div className="flex">
-            <div>
+            <div className="fixed z-10">
                 <Sidebar aria-label="Sidebar with multi-level dropdown example">
                     <Sidebar.ItemGroup>
                         <Sidebar.Item href="#" icon={<SquaresFour size={24} />}>
@@ -56,7 +56,7 @@ const Dashboard = () => {
                     </Sidebar.ItemGroup>
                 </Sidebar>
             </div>
-            <div>
+            <div className="absolute left-56">
                 <Outlet></Outlet>
             </div>
         </div>

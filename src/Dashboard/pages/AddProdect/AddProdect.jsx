@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import Swal from 'sweetalert2';
 
 const AddProdect = () => {
     const { register, handleSubmit } = useForm();
@@ -11,8 +12,30 @@ const AddProdect = () => {
         const {data: imageData} = await axios.post('https://api.imgbb.com/1/upload?key=b425eed4264500ee966fabfc8c973be7', imageFile)
         console.log(imageData)
 
-        
-   console.log(data.type,data.longdescription,data.photo)
+        const postData={
+            type: data.type,
+            name:data.productname,
+            origin: data.origin,
+            flavor: data.flavor,
+            caffeine_content: data.caffeinecontent,
+            short_description: data.shortdescription,
+            long_description: data.longdescription,
+            price: data.price,
+            image_url: imageData.data.display_url,
+        }
+
+      await axios.post('http://localhost:5000/addproduct',postData)
+        .then(res=>{
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Your work has been saved",
+                showConfirmButton: false,
+                timer: 1500
+              });
+        })
+        .catch(error=>console.error(error))
+   console.log(postData)
    }
     return (
         <div className='  md:ml-10 m-4'>

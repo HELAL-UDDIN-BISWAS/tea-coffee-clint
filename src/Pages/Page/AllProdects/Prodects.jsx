@@ -8,6 +8,7 @@ import { Badge,
       ShoppingCart,
     } from "phosphor-react";
 import { Link } from "react-router-dom";  
+import Product from "../Product/Product";
 const Prodects = () => {
     const { data: alldata } = useQuery({
         queryKey: ['data'],
@@ -23,7 +24,8 @@ const Prodects = () => {
         <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-3 md:grid-cols-1 w-full mx-auto gap-3 items-center justify-center text-center">
                 {
-                    alldata?.map(product=><div><Card
+                    alldata?.map(product=><div><Product product={product}></Product>
+                      {/* <Card
                         className="max-w-xs w-96 overflow-hidden rounded-md"
                         imgSrc={product.image_url}
                         imgSize="md">
@@ -44,17 +46,23 @@ const Prodects = () => {
                             </Card.Description>
                           </Card.Container>
                           <Card.Container className="flex items-center justify-start gap-5">       
-                            <Link to={`/detailsproduct/${product._id}`}>
-                            <Button size="sm" type="outlineGray">
+                            
+                            <Button  size="sm" type="outlineGray">
                               <span className="pr-2">
                                 <ShoppingCart size={24} />
                               </span>
-                              Add To Cart
+                              Add to Cart
+                            </Button>
+                            
+                            <Link to={`/detailsproduct/${product._id}`}>
+                            <Button size="sm" type="outlineGray">
+                             By Now
                             </Button>
                             </Link>                         
                           </Card.Container>
                         </Card.Container>
-                      </Card></div>)
+                      </Card> */}
+                      </div>)
                 }
             </div>
         </div>
