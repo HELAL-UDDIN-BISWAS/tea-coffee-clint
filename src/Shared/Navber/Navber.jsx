@@ -1,29 +1,30 @@
-import { MagnifyingGlass } from "phosphor-react";
+// import { MagnifyingGlass } from "phosphor-react";
 import { Navbar, Button, Avatar } from "keep-react";
 import { Link, NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../Proveider/Proveider";
+import { GiSelfLove } from "react-icons/gi";
 import Swal from "sweetalert2";
 
 const Navber = () => {
   const { user, logout } = useContext(AuthContext)
   console.log(user)
- const handlelogout=()=>{
-  logout()
-  .then(res=>{
-    Swal.fire({
-      position: "top-end",
-      icon: "success",
-      title: "Your work has been saved",
-      showConfirmButton: false,
-      timer: 1500
-    });
-  })
-  .catch(error=>console.error(error))
- }
- 
- 
- const navlink = <>
+  const handlelogout = () => {
+    logout()
+      .then(res => {
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Your work has been saved",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      })
+      .catch(error => console.error(error))
+  }
+
+
+  const navlink = <>
     <NavLink to="/" className={({ isActive, isPending }) =>
       isPending ? "" : isActive ? "bg-gray-500 text-white py-2 px-4 rounded" : "text-black"
     }
@@ -87,7 +88,6 @@ const Navber = () => {
             {
               user ? <>
                 <div className="flex items-center gap-3">
-                  <h3>Your Name: {user.displayName}</h3>
                   <Avatar
                     shape="circle"
                     size="md"
@@ -96,6 +96,9 @@ const Navber = () => {
                   />
                   <Button onClick={handlelogout} size="sm" type="primary">LogOut
                   </Button>
+                  <Link to={'/addtocart'}>
+                    <h3 className="text-2xl hover:cursor-pointer text-red-500"> <GiSelfLove /></h3>
+                  </Link>
                 </div>
               </> : <><Link to='/login'><Button size="sm" type="primary">Login
               </Button></Link>
