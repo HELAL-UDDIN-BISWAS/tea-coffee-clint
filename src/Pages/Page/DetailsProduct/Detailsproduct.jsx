@@ -5,6 +5,7 @@ import { Button, Modal } from "keep-react";
 import { CloudArrowUp } from "phosphor-react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 
 
@@ -24,9 +25,34 @@ const Detailsproduct = () => {
             location: data.location,
             age: data.age
         }
-        axios.post("")
+        axios.post("http://localhost:5000/adduserproduct",userData)
+        .then(res=>{
+            if(res.data.acknowledged == true){
+                console.log('Hello World', userData)
+                axios.post("http://localhost:5000/allpurchaseproduct",userData)
+                .then(res=>{
+                    if(res.data.acknowledged == true){
+                        console.log(res)
+                        Swal.fire({
+                            icon: "success",
+                            title: "Oops...",
+                            text: "Something went wrong!",
+                            footer: '<a href="#">Why do I have this issue?</a>'
+                          });
+                    }
+                })
+                .catch(error=>{
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: "Something went wrong!",
+                        footer: '<a href="#">Why do I have this issue?</a>'
+                      });
+                })
+            }
+            console.log(res)})
+        .catch(error=>console.log(error))
 
-        console.log('Hello World', userData)
 
         setShowModalX(!showModalX);
     }
