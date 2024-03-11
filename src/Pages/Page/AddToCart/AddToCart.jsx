@@ -21,14 +21,14 @@ const AddToCart = () => {
 
     })
 
-    const userCartData =cartData.filter(data=>data?.email === user?.email)
+    const userCartData =cartData?.filter(data=>data?.email === user?.email)
     console.log(userCartData)
     console.log(cartData)
 
     return (
         <div className="grid md:grid-cols-2 max-w-6xl mx-auto items-center justify-center">
            {userCartData? <div> {
-                userCartData?.map((datas) => <Card key={datas._id}
+                userCartData?.map((datas) => <Card key={datas?._id}
                     className="!max-w-xs overflow-hidden rounded-md md:!max-w-[478px]"
                     imgSrc={datas?.image_url}
                     imgSize="md"
@@ -60,7 +60,7 @@ const AddToCart = () => {
                         </Card.Container>
                         <Card.Container className="my-3 flex items-center justify-between">
                             <Card.Title className="text-body-3 m-3 font-medium text-metal-500">${datas?.price}</Card.Title>
-                            <Link to={`/detailsproduct/${datas?._id}`}>
+                            <Link to={`/detailsproduct/${datas?.id}`}>
                                 <Button type="primary" size="sm">
                                     Check Out
                                 </Button>
