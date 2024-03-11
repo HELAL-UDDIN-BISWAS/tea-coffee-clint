@@ -3,19 +3,37 @@ import { GrShop } from "react-icons/gr";
 import { useState } from "react";
 import { Button, Modal } from "keep-react";
 import { CloudArrowUp } from "phosphor-react";
+import { useForm } from "react-hook-form";
+import axios from "axios";
+
 
 
 const Detailsproduct = () => {
     const productData = useLoaderData();
-        const [showModalX, setShowModalX] = useState(false);
-    const onClickOne = () => {
-        console.log('Hello World')
+    const { register, handleSubmit } = useForm();
+    const [showModalX, setShowModalX] = useState(false);
+
+    const onSubmit = async (data) => {
+        const userData = {
+            image: productData?.image_url,
+            type: productData?.type,
+            price: productData?.price,
+            flavor: productData.flavor,
+            userName: data.name,
+            userEmail: data.email,
+            location: data.location,
+            age: data.age
+        }
+        axios.post("")
+
+        console.log('Hello World', userData)
+
         setShowModalX(!showModalX);
-      };
+    }
     const onClickTwo = () => {
         setShowModalX(!showModalX);
     };
-        return (
+    return (
         <div className="max-w-6xl mx-auto">
             <div className="md:flex">
                 <div className="flex-1">
@@ -29,7 +47,7 @@ const Detailsproduct = () => {
 
                     {/* <button className=" hover:bg-slate-400 bg-slate-300 py-2 px-4 rounded">BY NOW</button> */}
                     <Button className="items-center justify-center my-8" onClick={onClickTwo} size="md" color="success"><GrShop className="mx-1 items-center" />BY NOW</Button>
-                  <Modal
+                    <Modal
                         icon={<CloudArrowUp size={28} color="#1B4DFF" />}
                         size="md"
                         show={showModalX}
@@ -38,18 +56,43 @@ const Detailsproduct = () => {
                         <Modal.Header>Do you want to upload this file?</Modal.Header>
                         <Modal.Body>
                             <div className="space-y-6">
-                                <p className="text-body-5 md:text-body-4 leading-relaxed text-metal-500">
-                                    Contrary to popular belief, Lorem Ipsum is not simply random text.
-                                </p>
+                                <form className='' onSubmit={handleSubmit(onSubmit)}>
+                                    <div className=''>
+
+                                        <div className="w-full">
+                                            <label className='block'>
+                                                <span>Name</span>
+                                            </label>
+                                            <input type="text" {...register('name')} className="md:w-72 bg-white px-4 py-2 text-lg outline-none border-2 rounded hover:border-gray-600 border-gray-400 duration-200 bg-inherit" placeholder='Inter Your Name' required />
+                                        </div>
+
+                                        <div className="w-full">
+                                            <label className='block'>
+                                                <span>Email</span>
+                                            </label>
+                                            <input type="email" {...register('email')} className="md:w-72 bg-white px-4 py-2 text-lg outline-none border-2 rounded hover:border-gray-600 border-gray-400 duration-200 bg-inherit" placeholder='Inter Your Email' required />
+                                        </div>
+
+                                        <div className="w-full">
+                                            <label className='block'>
+                                                <span>Locaton</span>
+                                            </label>
+                                            <input type="text" {...register('location')} className="md:w-72 bg-white px-4 py-2 text-lg outline-none border-2 rounded hover:border-gray-600 border-gray-400 duration-200 bg-inherit" placeholder='Inter Your Location' required />
+                                        </div>
+                                        <div className="w-full">
+                                            <label className='block'>
+                                                <span>Age</span>
+                                            </label>
+                                            <input type="number" {...register('age')} className="md:w-72 bg-white px-4 py-2 text-lg outline-none border-2 rounded hover:border-gray-600 border-gray-400 duration-200 bg-inherit" placeholder='Inter Your Age' required />
+                                        </div>
+
+
+                                    </div>
+                                    <button className="py-3 bg-primary-500 hover:bg-primary-600 text-white px-5 rounded my-2 w-full">SignUp</button>
+                                </form>
                             </div>
                         </Modal.Body>
                         <Modal.Footer>
-                            <Button type="outlineGray" onClick={onClickTwo}>
-                                Cancel
-                            </Button>
-                            <Button type="primary" onClick={onClickOne}>
-                                Confirm
-                            </Button>
                         </Modal.Footer>
                     </Modal>
                 </div>
