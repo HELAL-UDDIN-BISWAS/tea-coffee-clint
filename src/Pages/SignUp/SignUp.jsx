@@ -7,9 +7,9 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 
 const SignUp = () => {
-    const { createUser,ubdateUser } = useContext(AuthContext);
+    const { createUser, ubdateUser } = useContext(AuthContext);
     const { register, handleSubmit } = useForm()
-    const onSubmit =async (data) => {
+    const onSubmit = async (data) => {
         const imageFile = new FormData();
         imageFile.append('image', data.photo[0]);
         console.log(imageFile)
@@ -17,28 +17,40 @@ const SignUp = () => {
         createUser(data.email, data.password)
             .then(async res => {
                 console.log(res)
-                const {data: imageData} = await axios.post('https://api.imgbb.com/1/upload?key=b425eed4264500ee966fabfc8c973be7', imageFile)
-                ubdateUser(data.name, imageData.data.display_url)
-                .then(res=>{
+                const { data: imageData } = await axios.post('https://api.imgbb.com/1/upload?key=b425eed4264500ee966fabfc8c973be7', imageFile)
+                const userData = {
+                    email: data.email,
+                    password: data.password,
+                    userName: data.name,
+                    userImage: imageData.data.display_url,
+                    role: "user",
+                }
+               await axios.post('http://localhost:5000/addnewuser', userData)
+                .then(res => console.log(res))
+                .catch(error => console.log(error))
 
-                })
-                .catch(error=>{
-                    const Toast = Swal.mixin({
-                        toast: true,
-                        position: "top-end",
-                        showConfirmButton: false,
-                        timer: 3000,
-                        timerProgressBar: true,
-                        didOpen: (toast) => {
-                          toast.onmouseenter = Swal.stopTimer;
-                          toast.onmouseleave = Swal.resumeTimer;
-                        }
-                      });
-                      Toast.fire({
-                        icon: "success",
-                        title: "Signed in successfully"
-                      });
-                    console.log(error)})
+                ubdateUser(data.name, imageData.data.display_url)
+                    .then(res => {
+                       
+                    })
+                    .catch(error => {
+                        const Toast = Swal.mixin({
+                            toast: true,
+                            position: "top-end",
+                            showConfirmButton: false,
+                            timer: 3000,
+                            timerProgressBar: true,
+                            didOpen: (toast) => {
+                                toast.onmouseenter = Swal.stopTimer;
+                                toast.onmouseleave = Swal.resumeTimer;
+                            }
+                        });
+                        Toast.fire({
+                            icon: "success",
+                            title: "Signed in successfully"
+                        });
+                        console.log(error)
+                    })
                 console.log(imageData)
             })
             .catch(error => console.error(error))

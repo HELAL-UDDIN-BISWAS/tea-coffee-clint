@@ -35,9 +35,11 @@ const Dashboard = () => {
                                 Add Product
                             </Sidebar.Item>
                         </Link>
+                        <Link to={"alluser"}>
                         <Sidebar.Item href="#" icon={<Users size={24} />}>
                             All Users
                         </Sidebar.Item>
+                        </Link>
                         <Link to={"allprodect"}>
                             <Sidebar.Item href="#" icon={<ShoppingBagOpen size={24} />}>
                                 Products
