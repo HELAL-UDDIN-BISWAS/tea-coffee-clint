@@ -27,7 +27,7 @@ const AllUser = () => {
                     </thead>
                     <tbody>
                         {
-                            allUserData?.map((datas)=><tr>
+                            allUserData?.map((datas)=><tr key={datas._id}>
                             <td className="py-2 px-4 border-b"><img className="h-10 w-10 rounded" src={datas.userImage}></img></td>
                             <td className="py-2 px-4 border-b">{datas?.userName}</td>
                             <td className="py-2 px-4 border-b">{datas?.email}</td>

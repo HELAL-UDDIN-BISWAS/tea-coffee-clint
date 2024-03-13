@@ -36,9 +36,9 @@ const Dashboard = () => {
                             </Sidebar.Item>
                         </Link>
                         <Link to={"alluser"}>
-                        <Sidebar.Item href="#" icon={<Users size={24} />}>
-                            All Users
-                        </Sidebar.Item>
+                            <Sidebar.Item href="#" icon={<Users size={24} />}>
+                                All Users
+                            </Sidebar.Item>
                         </Link>
                         <Link to={"allprodect"}>
                             <Sidebar.Item href="#" icon={<ShoppingBagOpen size={24} />}>
@@ -47,7 +47,8 @@ const Dashboard = () => {
                         </Link>
                     </Sidebar.ItemGroup>
                     <Sidebar.ItemGroup>
-                              <Sidebar.Item href="#" icon={<CiUser size={24} />}>
+                        <Link to={"user"}></Link>
+                        <Sidebar.Item href="#" icon={<CiUser size={24} />}>
                             User
                         </Sidebar.Item>
                         <Sidebar.Item href="#" icon={<ChartBar size={24} />}>
