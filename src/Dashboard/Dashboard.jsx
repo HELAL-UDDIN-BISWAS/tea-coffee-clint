@@ -47,10 +47,11 @@ const Dashboard = () => {
                         </Link>
                     </Sidebar.ItemGroup>
                     <Sidebar.ItemGroup>
-                        <Link to={"user"}></Link>
+                        <Link to={"user"}>
                         <Sidebar.Item href="#" icon={<CiUser size={24} />}>
                             User
                         </Sidebar.Item>
+                        </Link>
                         <Sidebar.Item href="#" icon={<ChartBar size={24} />}>
                             Our Progress
                         </Sidebar.Item>
