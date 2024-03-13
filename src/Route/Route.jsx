@@ -12,6 +12,7 @@ import AllProdect from "../Dashboard/pages/AllProdect/AllProdect";
 import AddToCart from "../Pages/Page/AddToCart/AddToCart";
 import DashboardChart from "../Dashboard/pages/DashboardChart/DashboardChart";
 import AllUser from "../Dashboard/pages/AllUser/AllUser";
+import User from "../Dashboard/pages/User/User";
 
 const router = createBrowserRouter([
   {
@@ -68,6 +69,10 @@ const router = createBrowserRouter([
       {
         path: "alluser",
         element: <AllUser></AllUser>
+      },
+      {
+        path: "user",
+        element: <User></User>
       }
     ]
 
