@@ -1,15 +1,17 @@
 import { useLoaderData } from "react-router-dom";
 import { GrShop } from "react-icons/gr";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Button, Modal } from "keep-react";
 import { CloudArrowUp } from "phosphor-react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../../Proveider/Proveider";
 
 
 
 const Detailsproduct = () => {
+    const {user}=useContext(AuthContext);
     const productData = useLoaderData();
     const { register, handleSubmit } = useForm();
     const [showModalX, setShowModalX] = useState(false);
@@ -21,7 +23,7 @@ const Detailsproduct = () => {
             price: productData?.price,
             flavor: productData.flavor,
             userName: data.name,
-            userEmail: data.email,
+            userEmail: user?.email,
             location: data.location,
             age: data.age
         }
@@ -92,14 +94,7 @@ const Detailsproduct = () => {
                                             <input type="text" {...register('name')} className="md:w-72 bg-white px-4 py-2 text-lg outline-none border-2 rounded hover:border-gray-600 border-gray-400 duration-200 bg-inherit" placeholder='Inter Your Name' required />
                                         </div>
 
-                                        <div className="w-full">
-                                            <label className='block'>
-                                                <span>Email</span>
-                                            </label>
-                                            <input type="email" {...register('email')} className="md:w-72 bg-white px-4 py-2 text-lg outline-none border-2 rounded hover:border-gray-600 border-gray-400 duration-200 bg-inherit" placeholder='Inter Your Email' required />
-                                        </div>
-
-                                        <div className="w-full">
+                                         <div className="w-full">
                                             <label className='block'>
                                                 <span>Locaton</span>
                                             </label>

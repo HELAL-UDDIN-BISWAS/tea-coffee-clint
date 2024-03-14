@@ -13,6 +13,7 @@ import AddToCart from "../Pages/Page/AddToCart/AddToCart";
 import DashboardChart from "../Dashboard/pages/DashboardChart/DashboardChart";
 import AllUser from "../Dashboard/pages/AllUser/AllUser";
 import User from "../Dashboard/pages/User/User";
+import PerchesProduct from "../Dashboard/pages/PerchesProduct/PerchesProduct";
 
 const router = createBrowserRouter([
   {
@@ -73,6 +74,10 @@ const router = createBrowserRouter([
       {
         path: "user",
         element: <User></User>
+      },
+      {
+        path: "perchesproduct",
+        element: <PerchesProduct></PerchesProduct>
       }
     ]
 

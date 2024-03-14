@@ -48,14 +48,15 @@ const Dashboard = () => {
                     </Sidebar.ItemGroup>
                     <Sidebar.ItemGroup>
                         <Link to={"user"}>
-                        <Sidebar.Item href="#" icon={<CiUser size={24} />}>
-                            User
-                        </Sidebar.Item>
+                            <Sidebar.Item href="#" icon={<CiUser size={24} />}>
+                                User
+                            </Sidebar.Item>
                         </Link>
-                        <Sidebar.Item href="#" icon={<ChartBar size={24} />}>
-                            Our Progress
-                        </Sidebar.Item>
-
+                        <Link to={"perchesproduct"}>
+                            <Sidebar.Item icon={<ChartBar size={24} />}>
+                                Perches Product
+                            </Sidebar.Item>
+                        </Link>
                         <Sidebar.Item href="/" icon={<IoHomeOutline size={24} />}>
                             Home
                         </Sidebar.Item>
