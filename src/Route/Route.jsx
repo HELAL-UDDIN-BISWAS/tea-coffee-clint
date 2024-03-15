@@ -14,6 +14,7 @@ import DashboardChart from "../Dashboard/pages/DashboardChart/DashboardChart";
 import AllUser from "../Dashboard/pages/AllUser/AllUser";
 import User from "../Dashboard/pages/User/User";
 import PerchesProduct from "../Dashboard/pages/PerchesProduct/PerchesProduct";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -53,7 +54,7 @@ const router = createBrowserRouter([
   },
   {
     path: "dashboard",
-    element: <Dashboard></Dashboard>,
+    element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
     children: [
       {
         path:"",

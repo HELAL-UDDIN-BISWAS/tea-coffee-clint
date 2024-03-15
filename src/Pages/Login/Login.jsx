@@ -4,9 +4,12 @@ import { FcGoogle } from "react-icons/fc";
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../Proveider/Proveider';
 import Swal from 'sweetalert2';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const {loginuser}=useContext(AuthContext);
+    const location = useLocation()
+    const navigate = useNavigate()
         const { register, handleSubmit } = useForm();
     const onSubmit =async (data) => {
           loginuser(data.email,data.password)
@@ -17,6 +20,7 @@ const Login = () => {
                 text: "Something went wrong!",
                 footer: '<a href="#">Why do I have this issue?</a>'
               });
+              navigate(from, { replace: true })
             console.log(res)})
             .catch(error=>{
                 Swal.fire({
@@ -27,6 +31,7 @@ const Login = () => {
                   });
                 console.error(error)})
     }
+    const from = location.state?.from?.pathname || '/';
 
     return (
         <div className=' w-full h-[80vh] flex justify-center items-center mx-auto '>
