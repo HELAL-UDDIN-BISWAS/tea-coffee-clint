@@ -1,8 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
+import { SkeletonComponent } from "../../../Components/Skeleton/SkeletonComponent";
 
 const AllProdect = () => {
-   const {refetch, data } = useQuery({
+   const {refetch, isLoading, data:AllData } = useQuery({
         queryKey: [],
         queryFn: () => fetch('http://localhost:5000/allproducts')
             .then((res) => res.json())
@@ -37,7 +38,12 @@ const AllProdect = () => {
               }
             });
     }
-    console.log(data)
+    console.log(AllData)
+    if(isLoading == true){
+      <div>
+        <SkeletonComponent></SkeletonComponent>
+      </div>
+    }
     return (
         <div className="p-2">
             <div className="max-w-screen-md mx-auto">
@@ -54,7 +60,7 @@ const AllProdect = () => {
                     </thead>
                     <tbody>
                         {
-                            data?.map((datas)=><tr>
+                            AllData?.map((datas)=><tr>
                             <td className="py-2 px-4 border-b"><img className="h-10 w-10 rounded" src={datas.image_url}></img></td>
                             <td className="py-2 px-4 border-b">{datas.name}</td>
                             <td className="py-2 px-4 border-b">{datas.origin}</td>
