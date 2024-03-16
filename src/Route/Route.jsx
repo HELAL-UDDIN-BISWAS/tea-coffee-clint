@@ -15,6 +15,7 @@ import AllUser from "../Dashboard/pages/AllUser/AllUser";
 import User from "../Dashboard/pages/User/User";
 import PerchesProduct from "../Dashboard/pages/PerchesProduct/PerchesProduct";
 import PrivateRoute from "./PrivateRoute";
+import PaymentPage from "../Dashboard/UserPayment/PatmentPage/PaymentPage";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: "prodects",
         element: <Prodects></Prodects>
+      },
+      {
+        path: "userpayment",
+        element: <PaymentPage></PaymentPage>
       },
       {
         path: "detailsproduct/:id",
@@ -79,7 +84,8 @@ const router = createBrowserRouter([
       {
         path: "perchesproduct",
         element: <PerchesProduct></PerchesProduct>
-      }
+      },
+      
     ]
 
   }

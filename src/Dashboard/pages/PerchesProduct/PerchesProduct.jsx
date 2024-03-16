@@ -23,7 +23,7 @@ const PerchesProduct = () => {
                     <div className="flex justify-around text-center items-center my-6">
                         <h2>Total Item: </h2>
                         <h2>Total Price</h2>
-                        <Link>
+                        <Link to={"/userpayment"}>
                         <Button className="items-center justify-center " size="md" color="success">PAY NOW</Button>
                         </Link>
                     </div>
