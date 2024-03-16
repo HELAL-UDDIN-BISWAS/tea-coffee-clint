@@ -1,6 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import { useContext } from "react";
 import { AuthContext } from "../../../Proveider/Proveider";
+import { Link } from "react-router-dom";
+import { Button } from "keep-react";
 
 const PerchesProduct = () => {
     const{user}=useContext(AuthContext);
@@ -18,6 +20,13 @@ const PerchesProduct = () => {
             
             <div className="p-2">
                 <div className="max-w-screen-md mx-auto">
+                    <div className="flex justify-around text-center items-center my-6">
+                        <h2>Total Item: </h2>
+                        <h2>Total Price</h2>
+                        <Link>
+                        <Button className="items-center justify-center " size="md" color="success">PAY NOW</Button>
+                        </Link>
+                    </div>
                     <table className="min-w-full bg-white border border-gray-300">
                         <thead>
                             <tr>

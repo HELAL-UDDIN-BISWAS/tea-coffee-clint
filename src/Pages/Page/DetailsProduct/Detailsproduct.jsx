@@ -24,6 +24,7 @@ const Detailsproduct = () => {
             flavor: productData.flavor,
             userName: data.name,
             userEmail: user?.email,
+            number: data.number,
             location: data.location,
             age: data.age
         }
@@ -98,7 +99,13 @@ const Detailsproduct = () => {
                                             <label className='block'>
                                                 <span>Locaton</span>
                                             </label>
-                                            <input type="text" {...register('location')} className="md:w-72 bg-white px-4 py-2 text-lg outline-none border-2 rounded hover:border-gray-600 border-gray-400 duration-200 bg-inherit" placeholder='Inter Your Location' required />
+                                            <input type="text" {...register('location')} className="md:w-72 bg-white px-4 py-2 text-lg outline-none border-2 rounded hover:border-gray-600 border-gray-400 duration-200 bg-inherit" placeholder='Inter Your number' required />
+                                        </div>
+                                         <div className="w-full">
+                                            <label className='block'>
+                                                <span>Number</span>
+                                            </label>
+                                            <input type="number" {...register('numder')} className="md:w-72 bg-white px-4 py-2 text-lg outline-none border-2 rounded hover:border-gray-600 border-gray-400 duration-200 bg-inherit" placeholder='Inter Your Location' required />
                                         </div>
                                         <div className="w-full">
                                             <label className='block'>
