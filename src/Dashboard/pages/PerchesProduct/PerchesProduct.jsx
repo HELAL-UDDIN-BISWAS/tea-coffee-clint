@@ -3,15 +3,13 @@ import { useContext } from "react";
 import { AuthContext } from "../../../Proveider/Proveider";
 import { Link } from "react-router-dom";
 import { Button } from "keep-react";
+import PaymentData from "../../../Hooks/PaymentData/PaymentData";
 
 const PerchesProduct = () => {
+    const [refetch,isLoading,paymentdata]=PaymentData();
     const{user}=useContext(AuthContext);
-    const {data:perchesDatas}=useQuery({
-        queryKey: ['data'],
-        queryFn: ()=> fetch('http://localhost:5000/userpurchaseproduct')
-        .then(res=>res.json())
-    })
-    const perchesData=perchesDatas?.filter(data=>data?.userEmail === user?.email)
+   
+    const perchesData=paymentdata?.filter(data=>data?.userEmail === user?.email)
     console.log(perchesData)
     return (
         <div>
