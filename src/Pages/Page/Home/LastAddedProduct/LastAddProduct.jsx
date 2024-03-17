@@ -15,7 +15,7 @@ const LastAddProduct = () => {
         const {isLoading, data: lastAddData } = useQuery({
             queryKey: ['data'],
             queryFn: async() =>
-            await fetch('http://localhost:5000/lastedproduct').then((res) =>
+            await fetch('https://tea-coffee-server.vercel.app/lastedproduct').then((res) =>
                 res.json(),
     
               ),

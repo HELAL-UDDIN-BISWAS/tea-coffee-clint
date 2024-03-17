@@ -29,7 +29,7 @@ const Product = ({ product }) => {
         email: user?.email
     }
     const addCart = () => {
-        axios.post('http://localhost:5000/addcartproduct',addCartData)
+        axios.post('https://tea-coffee-server.vercel.app/addcartproduct',addCartData)
         .then(res=>console.log(res))
         .catch(error=>console.log(error))
     }

@@ -17,7 +17,7 @@ const AddToCart = () => {
     const { data: cartData } = useQuery({
         queryKey: ['data'],
         queryFn: async () =>
-            await fetch('http://localhost:5000/cartdata').then(res => res.json())
+            await fetch('https://tea-coffee-server.vercel.app/cartdata').then(res => res.json())
 
     })
 

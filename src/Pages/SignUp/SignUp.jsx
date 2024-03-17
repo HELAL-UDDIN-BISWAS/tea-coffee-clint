@@ -25,7 +25,7 @@ const SignUp = () => {
                     userImage: imageData.data.display_url,
                     role: "user",
                 }
-               await axios.post('http://localhost:5000/addnewuser', userData)
+               await axios.post('https://tea-coffee-server.vercel.app/addnewuser', userData)
                 .then(res => console.log(res))
                 .catch(error => console.log(error))
 

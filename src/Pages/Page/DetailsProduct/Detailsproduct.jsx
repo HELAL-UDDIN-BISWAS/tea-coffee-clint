@@ -28,11 +28,11 @@ const Detailsproduct = () => {
             location: data.location,
             age: data.age
         }
-        axios.post("http://localhost:5000/adduserproduct",userData)
+        axios.post("https://tea-coffee-server.vercel.app/adduserproduct",userData)
         .then(res=>{
             if(res.data.acknowledged == true){
                 console.log('Hello World', userData)
-                axios.post("http://localhost:5000/allpurchaseproduct",userData)
+                axios.post("https://tea-coffee-server.vercel.app/allpurchaseproduct",userData)
                 .then(res=>{
                     if(res.data.acknowledged == true){
                         console.log(res)

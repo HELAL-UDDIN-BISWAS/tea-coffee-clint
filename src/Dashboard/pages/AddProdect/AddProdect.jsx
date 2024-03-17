@@ -24,7 +24,7 @@ const AddProdect = () => {
             image_url: imageData.data.display_url,
         }
 
-      await axios.post('http://localhost:5000/addproduct',postData)
+      await axios.post('https://tea-coffee-server.vercel.app/addproduct',postData)
         .then(res=>{
             Swal.fire({
                 position: "top-end",

@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 const AllUser = () => {
     const { data: allUserData } = useQuery({
         queryKey: ["data"],
-        queryFn: () => fetch("http://localhost:5000/alluser")
+        queryFn: () => fetch("https://tea-coffee-server.vercel.app/alluser")
             .then(res => res.json())
 
     })

@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 const PaymentData = () => {
     const{refetch, isLoading, data:paymentdata = []}=useQuery({
         queryKey:['data'],
-        queryFn:async ()=> await fetch('http://localhost:5000/userpurchaseproduct')
+        queryFn:async ()=> await fetch('https://tea-coffee-server.vercel.app/userpurchaseproduct')
             .then(res=>res.json())
     
     })

@@ -5,7 +5,7 @@ import { SkeletonComponent } from "../../../Components/Skeleton/SkeletonComponen
 const AllProdect = () => {
    const {refetch, isLoading, data:AllData } = useQuery({
         queryKey: [],
-        queryFn: () => fetch('http://localhost:5000/allproducts')
+        queryFn: () => fetch('https://tea-coffee-server.vercel.app/allproducts')
             .then((res) => res.json())
     })
     const deleteData=(id)=>{
@@ -20,7 +20,7 @@ const AllProdect = () => {
           })
             .then((result) => {
               if (result.isConfirmed) {
-                fetch(`http://localhost:5000/deleteproduct/${id}`, {
+                fetch(`https://tea-coffee-server.vercel.app/deleteproduct/${id}`, {
                   method: "DELETE",
                 })
                   .then(res => res.json())
