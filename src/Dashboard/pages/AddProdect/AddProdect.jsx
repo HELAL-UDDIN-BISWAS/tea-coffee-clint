@@ -38,7 +38,7 @@ const AddProdect = () => {
    console.log(postData)
    }
     return (
-        <div className='  md:ml-10 m-4'>
+        <div className='  md:ml-10 m-4 shadow-lg shadow-black p-5 rounded'>
            <form className=''  onSubmit={handleSubmit(onSubmit)}>
            <div className=' grid  md:grid-cols-2 gap-3'>
                     <div className="w-full">
@@ -105,7 +105,7 @@ const AddProdect = () => {
                     </div>     
                 </div>
                 
-                <button>dfsdfd</button>
+                <button className='bg-lime-100 text-lime-500 hover:text-white hover:bg-lime-600 py-2 px-3 rounded my-8'>Add Product</button>
            </form>
         </div>
     );

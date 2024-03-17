@@ -54,7 +54,7 @@ const PerchesProduct = () => {
                     </table>
                 </div>
             </div>
-            </div>:<div>You Have No Item</div>
+            </div>:<div className="mt-9 text-2xl text-center max-w-6xl mx-auto items-center justify-center">You Have No Item. Please Boy Now</div>
            }
         </div>
     );

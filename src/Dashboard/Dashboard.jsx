@@ -64,7 +64,7 @@ const Dashboard = () => {
                     </Sidebar.ItemGroup>
                 </Sidebar>
             </div>
-            <div className="absolute left-56">
+            <div className="absolute left-56 items-center justify-center">
                 <Outlet></Outlet>
             </div>
         </div>

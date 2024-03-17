@@ -3,6 +3,7 @@ import PaymentData from "../../../Hooks/PaymentData/PaymentData";
 import { AuthContext } from "../../../Proveider/Proveider";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 
 const CheckoutForm = () => {
@@ -19,7 +20,7 @@ const CheckoutForm = () => {
   console.log(totalPrice)
   useEffect(() => {
     if(totalPrice > 0){
-      axios.post('https://y-tau-one.vercel.app/create-payment-intent', { price: 10 })
+      axios.post('https://tea-coffee-server.vercel.app/create-payment-intent', { price: totalPrice })
       .then(res => {
         console.log(res.data.clientSecret)
         setClientSecret(res.data.clientSecret)
@@ -66,29 +67,29 @@ const CheckoutForm = () => {
       if (paymentIntent.status === 'succeeded') {
         console.log('transaction id', paymentIntent.id)
         settransactionId(paymentIntent.id)
-        // const payment = {
-        //   email: user.email,
-        //   price: totalPrice,
-        //   transactionId: paymentIntent.id,
-        //   date: new Date(),
-        // //   cartIds: cart.map(item => item._id),
+        const payment = {
+          email: user.email,
+          price: totalPrice,
+          transactionId: paymentIntent.id,
+          date: new Date(),
+          cartIds: perchesData.map(item => item._id),
           
-        //   status: 'pending'
-        // }
+          status: 'pending'
+        }
 
-        // const res = await axios.post('/payments', payment);
-        // console.log('payment saved', res.data);
-        // refetch();
-        // if (res.data?.paymentResult?.insertedId) {
-        //   Swal.fire({
-        //     position: "top-end",
-        //     icon: "success",
-        //     title: "Thank you payment",
-        //     showConfirmButton: false,
-        //     timer: 1500
-        //   });
-        //   navigate('/dashboard/paymentHistory')
-        // }
+        const res = await axios.post('https://tea-coffee-server.vercel.app/payments', payment);
+        console.log('payment saved', res.data);
+        refetch();
+        if (res.data?.paymentResult?.insertedId) {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Thank you payment",
+            showConfirmButton: false,
+            timer: 1500
+          });
+          // navigate('/dashboard/paymentHistory')
+        }
       }
     }
 
@@ -102,9 +103,9 @@ const CheckoutForm = () => {
           style: {
             base: {
               fontSize: '16px',
-              color: '#424770',
+              color: '#1B4DFF',
               '::placeholder': {
-                color: '#aab7c4',
+                color: '#3085d6',
               },
             },
             invalid: {
@@ -113,7 +114,7 @@ const CheckoutForm = () => {
           },
         }}
       />
-      <button className="bg-red-400 px-2 py-1 hover:cursor-pointer rounded" type="submit" disabled={!stripe || !clientSecret}>
+      <button className="bg-lime-100 text-lime-500 hover:text-white hover:bg-lime-600 py-2 px-3 rounded my-8" type="submit" disabled={!stripe || !clientSecret}>
         Pay Now
       </button>
       <p className="text-red-500 ">{error}</p>

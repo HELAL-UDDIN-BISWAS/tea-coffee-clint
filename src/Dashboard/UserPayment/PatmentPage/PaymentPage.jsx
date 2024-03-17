@@ -11,7 +11,7 @@ const PaymentPage = () => {
     return (
         <div className='h-[90vh] flex items-center justify-center' >
             <div>
-                Pay Naw
+              
                 <Elements stripe={stripePromise}>
                     <CheckoutForm></CheckoutForm>
                 </Elements>

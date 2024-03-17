@@ -22,7 +22,7 @@ const Prodects = () => {
     
     return (
         <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-3 md:grid-cols-2 md:items-center w-full mx-auto gap-3 items-center justify-center text-center">
+            <div className="grid  lg:grid-cols-3 md:grid-cols-2 md:items-center w-full mx-auto gap-3 items-center justify-center text-center">
                 {
                     alldata?.map(product=><div><Product key={product._id} product={product}></Product>
                     

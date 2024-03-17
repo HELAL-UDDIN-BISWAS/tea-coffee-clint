@@ -34,9 +34,9 @@ const Product = ({ product }) => {
         .catch(error=>console.log(error))
     }
     return (
-        <div>
+        <div className="">
             <Card
-                className="max-w-xs w-96 overflow-hidden rounded-md"
+                className="max-w-xs w-96 overflow-hidden rounded-md shadow-lg"
                 imgSrc={image_url}
                 imgSize="md">
                 <Card.Container className="absolute right-3.5 top-3.5 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-metal-50/50">

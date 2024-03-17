@@ -26,8 +26,8 @@ const AddToCart = () => {
     console.log(cartData)
 
     return (
-        <div className="grid md:grid-cols-2 max-w-6xl mx-auto items-center justify-center">
-           {userCartData? <div> {
+        <div className=" max-w-6xl mx-auto items-center justify-center">
+           {userCartData? <div className="grid md:grid-cols-2 items-center justify-center gap-3"> {
                 userCartData?.map((datas) => <Card key={datas?._id}
                     className="!max-w-xs overflow-hidden rounded-md md:!max-w-[478px]"
                     imgSrc={datas?.image_url}
