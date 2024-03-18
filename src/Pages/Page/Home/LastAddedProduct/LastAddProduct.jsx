@@ -35,7 +35,7 @@ const LastAddProduct = () => {
             {
                 lastAddData?.map(data=> <Card
                     className="max-w-xs w-96 overflow-hidden rounded-md"
-                    imgSrc={data.image_url}
+                    imgSrc={data?.image_url}
                     imgSize="md">
                     <Card.Container className="absolute right-3.5 top-3.5 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-metal-50/50">
                         <Heart size={20} weight="bold" color="white" />
@@ -45,16 +45,16 @@ const LastAddProduct = () => {
                             <Badge size="xs" colorType="light" color="gray">
                                 For Sale
                             </Badge>
-                            <Card.Title>{data.price}</Card.Title>
+                            <Card.Title>{data?.price}</Card.Title>
                         </Card.Container>
                         <Card.Container className="my-3">
                             <Card.Title>{data.name}</Card.Title>
                             <Card.Description>
-                                {data.short_description}
+                                {data?.short_description}
                             </Card.Description>
                         </Card.Container>
                         <Card.Container className="flex items-center justify-start gap-5">  
-                            <Link to={`/detailsproduct/${data._id}`}>
+                            <Link to={`/detailsproduct/${data?._id}`}>
                                 <Button size="sm" type="outlineGray">
                                     By Now
                                 </Button>

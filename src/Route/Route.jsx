@@ -44,7 +44,7 @@ const router = createBrowserRouter([
       },
       {
         path: "prodects",
-        element: <Prodects></Prodects>
+        element: <PrivateRoute><Prodects></Prodects></PrivateRoute>
       },
       {
         path: "userpayment",
@@ -59,7 +59,7 @@ const router = createBrowserRouter([
   },
   {
     path: "dashboard",
-    element: <Dashboard></Dashboard>,
+    element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
     children: [
       {
         path:"",
