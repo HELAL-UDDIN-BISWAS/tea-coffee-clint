@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
 import { SkeletonComponent } from "../../../Components/Skeleton/SkeletonComponent";
+import { Link } from "react-router-dom";
 
 const AllProdect = () => {
    const {refetch, isLoading, data:AllData } = useQuery({
@@ -61,7 +62,8 @@ const AllProdect = () => {
                     <tbody>
                         {
                             AllData?.map((datas)=><tr>
-                            <td className="py-2 px-4 border-b"><img className="h-10 w-10 rounded" src={datas.image_url}></img></td>
+                              <Link to={`/detailsproduct/${datas._id}`}>
+                            <td className="py-2 px-4 border-b"><img className="h-10 w-10 rounded" src={datas.image_url}></img></td></Link>
                             <td className="py-2 px-4 border-b">{datas.name}</td>
                             <td className="py-2 px-4 border-b">{datas.origin}</td>
                             <td className="py-2 px-4 border-b">{datas.price}</td>
