@@ -1,5 +1,9 @@
 import { Carousel } from "keep-react";
 import { ArrowLineLeft, ArrowLineRight } from "phosphor-react";
+import carousel from  "./../../../../../public/Image/Carousel3.jpg"
+import carousel1 from  "./../../../../../public/Image/Carousel4.jpg"
+import carousel2 from  "./../../../../../public/Image/Carousel2.jpg"
+
 
 export const Banner = () => {
   return (
@@ -20,15 +24,19 @@ export const Banner = () => {
         alt="slider-1"
       />
       <img 
-        src="https://images.prismic.io/staticmania/dee3ff09-3ddc-4340-bc8f-ea0028bb4a61_2.png?auto=compress,format"
+        src={carousel}
+        alt="slider-3"
+      /> 
+      <img 
+        src={carousel2}
         alt="slider-2"
       />
+      {/* <img 
+        src="https://images.prismic.io/staticmania/dee3ff09-3ddc-4340-bc8f-ea0028bb4a61_2.png?auto=compress,format"
+        alt="slider-2"
+      /> */}
       <img 
-        src="https://images.prismic.io/staticmania/a5c7143d-24dd-4531-9f00-243f4eb27e28_3.png?auto=compress,format"
-        alt="slider-3"
-      />
-      <img 
-        src="https://images.prismic.io/staticmania/c5cf46a8-b10c-43c8-a60e-6692838cdee1_4.png?auto=compress,format"
+        src={carousel1}
         alt="slider-4"
       />
     </Carousel>
