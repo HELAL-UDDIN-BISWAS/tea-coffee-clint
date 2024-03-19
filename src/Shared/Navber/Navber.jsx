@@ -57,12 +57,15 @@ const Navber = () => {
         <Navbar.Container className="flex items-center justify-between">
           <Navbar.Container className="flex items-center">
             <Navbar.Brand>
-              <img
-                src="/images/keep.svg"
+              <Link to={"/"}>
+              <h2 className="text-xl hover:cursor-pointer"><span className="text-green-400 text-2xl">T</span>OP<span className="text-orange-600">T</span>EA</h2>
+              </Link>
+              {/* <img
+                src={Banner}
                 alt="keep"
                 width="100"
                 height="40"
-              />
+              /> */}
             </Navbar.Brand>
             <Navbar.Divider></Navbar.Divider>
             <Navbar.Container
