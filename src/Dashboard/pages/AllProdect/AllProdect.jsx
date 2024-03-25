@@ -55,9 +55,26 @@ const AllProdect = () => {
         <SkeletonComponent></SkeletonComponent>
       </div>
     }
-    const onSubmit=(data)=>{
-
-    }
+    // =-=-
+    const onSubmit=async(data)=>{
+     const imageFile = new FormData();
+         imageFile.append('image', data.photo[0]);
+         console.log(imageFile)
+         const {data: imageData} = await axios.post('https://api.imgbb.com/1/upload?key=b425eed4264500ee966fabfc8c973be7', imageFile)
+         console.log(imageData)
+ 
+         const postData={
+             type: data.type,
+             name:data.productname,
+             origin: data.origin,
+             flavor: data.flavor,
+             caffeine_content: data.caffeinecontent,
+             short_description: data.shortdescription,
+             long_description: data.longdescription,
+             price: data.price,
+             image_url: imageData.data.display_url,
+         }}
+    // =-=
     const onClickTwo = () => {
       setShowModalX(!showModalX);
   };
@@ -118,7 +135,7 @@ const AllProdect = () => {
                         <input type="text" {...register('origin')} className="bg-white px-4 py-2 text-lg outline-none border-2 rounded hover:border-gray-600 border-gray-400 duration-200 bg-inherit" placeholder='Origin' required />
                     </div>
 
-                    <div className="w-full">
+                    <div className="">
                         <label className='block'>
                             <span>Flavor</span>
                         </label>
@@ -161,7 +178,7 @@ const AllProdect = () => {
                     </div>     
                 </div>
                 
-                <button className='bg-lime-100 text-lime-500 hover:text-white hover:bg-lime-600 py-2 px-3 rounded my-8'>Add Product</button>
+                <button className='bg-lime-100 text-lime-500 hover:text-white hover:bg-lime-600 py-2 px-3 rounded my-8'>Update Product</button>
                                 </form>
                             </div>
                         </Modal.Body>
