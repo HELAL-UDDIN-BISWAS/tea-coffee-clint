@@ -8,6 +8,7 @@ import { useContext, useState } from "react";
 import { Button, Modal } from "keep-react";
 import { CloudArrowUp } from "phosphor-react";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 
 
 const AllProdect = () => {
@@ -74,6 +75,7 @@ const AllProdect = () => {
              price: data.price,
              image_url: imageData.data.display_url,
          }}
+         axios.put('')
     // =-=
     const onClickTwo = () => {
       setShowModalX(!showModalX);
