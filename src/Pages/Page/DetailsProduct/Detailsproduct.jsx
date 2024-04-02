@@ -7,11 +7,12 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../../Proveider/Proveider";
+import Comment from "../../../Components/Comment/Comment";
 
 
 
 const Detailsproduct = () => {
-    const {user}=useContext(AuthContext);
+    const { user } = useContext(AuthContext);
     const productData = useLoaderData();
     const { register, handleSubmit } = useForm();
     const [showModalX, setShowModalX] = useState(false);
@@ -28,33 +29,34 @@ const Detailsproduct = () => {
             location: data.location,
             age: data.age
         }
-        axios.post("https://tea-coffee-server.vercel.app/adduserproduct",userData)
-        .then(res=>{
-            if(res.data.acknowledged == true){
-                console.log('Hello World', userData)
-                axios.post("https://tea-coffee-server.vercel.app/allpurchaseproduct",userData)
-                .then(res=>{
-                    if(res.data.acknowledged == true){
-                        console.log(res)
-                        Swal.fire({
-                            icon: "success",
-                            title: "Oops...",
-                            text: "Something went wrong!",
-                            footer: '<a href="#">Why do I have this issue?</a>'
-                          });
-                    }
-                })
-                .catch(error=>{
-                    Swal.fire({
-                        icon: "error",
-                        title: "Oops...",
-                        text: "Something went wrong!",
-                        footer: '<a href="#">Why do I have this issue?</a>'
-                      });
-                })
-            }
-            console.log(res)})
-        .catch(error=>console.log(error))
+        axios.post("https://tea-coffee-server.vercel.app/adduserproduct", userData)
+            .then(res => {
+                if (res.data.acknowledged == true) {
+                    console.log('Hello World', userData)
+                    axios.post("https://tea-coffee-server.vercel.app/allpurchaseproduct", userData)
+                        .then(res => {
+                            if (res.data.acknowledged == true) {
+                                console.log(res)
+                                Swal.fire({
+                                    icon: "success",
+                                    title: "Oops...",
+                                    text: "Something went wrong!",
+                                    footer: '<a href="#">Why do I have this issue?</a>'
+                                });
+                            }
+                        })
+                        .catch(error => {
+                            Swal.fire({
+                                icon: "error",
+                                title: "Oops...",
+                                text: "Something went wrong!",
+                                footer: '<a href="#">Why do I have this issue?</a>'
+                            });
+                        })
+                }
+                console.log(res)
+            })
+            .catch(error => console.log(error))
 
 
         setShowModalX(!showModalX);
@@ -95,13 +97,13 @@ const Detailsproduct = () => {
                                             <input type="text" {...register('name')} className="md:w-72 bg-white px-4 py-2 text-lg outline-none border-2 rounded hover:border-gray-600 border-gray-400 duration-200 bg-inherit" placeholder='Inter Your Name' required />
                                         </div>
 
-                                         <div className="w-full">
+                                        <div className="w-full">
                                             <label className='block'>
                                                 <span>Locaton</span>
                                             </label>
                                             <input type="text" {...register('location')} className="md:w-72 bg-white px-4 py-2 text-lg outline-none border-2 rounded hover:border-gray-600 border-gray-400 duration-200 bg-inherit" placeholder='Inter Your number' required />
                                         </div>
-                                         <div className="w-full">
+                                        <div className="w-full">
                                             <label className='block'>
                                                 <span>Number</span>
                                             </label>
@@ -129,6 +131,10 @@ const Detailsproduct = () => {
                 <h2 className="text-2xl py-5">{productData?.short_description}</h2>
                 <p className="max-w-4xl ">{productData?.long_description}</p>
                 deta
+            </div>
+            {/* use Product Comment */}
+            <div className="mt-20">
+                <Comment></Comment>
             </div>
 
         </div>
