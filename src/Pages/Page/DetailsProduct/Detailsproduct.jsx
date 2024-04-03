@@ -134,7 +134,7 @@ const Detailsproduct = () => {
             </div>
             {/* use Product Comment */}
             <div className="mt-20">
-                <Comment></Comment>
+                <Comment productData={productData?._id}></Comment>
             </div>
 
         </div>

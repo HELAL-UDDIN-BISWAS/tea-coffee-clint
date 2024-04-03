@@ -1,11 +1,22 @@
+import { useContext } from "react";
+import { AuthContext } from "../../Proveider/Proveider";
+import axios from "axios";
 
-const Comment = () => {
+const Comment = ({productData}) => {
+    console.log(productData)
+    const {user}=useContext(AuthContext);
+    // console.log(user.photoURL)
     const handleSubmit=(event)=>{
         event.preventDefault();
-        const form = event.target
-        const Message=form.comment.value;
-        console.log(Message)
-      console.log('hello world')
+        const Message=event.target.comment.value;
+       const commentData={
+        id:productData,
+        photoURL: user?.photoURL,
+        message:Message
+       }
+      axios.post('http://localhost:5000/usercomment',commentData)
+      .then(res=>console.log(res))
+      .catch(error=>console.error(error))
     }
 
     return (
