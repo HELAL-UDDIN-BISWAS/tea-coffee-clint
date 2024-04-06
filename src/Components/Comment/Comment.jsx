@@ -9,6 +9,13 @@ const Comment = ({ productData }) => {
     console.log(productData)
     const { user } = useContext(AuthContext);
     // console.log(user.photoURL)
+        const { refetch, data: allcomment } = useQuery({
+        queryKey: ['Data'],
+        queryFn: () =>
+            fetch('http://localhost:5000/allusercomment')
+                    .then((res) => res.json())
+                .catch(error => console.log(error))
+    });
     const handleSubmit = (event) => {
         event.preventDefault();
         const Message = event.target.comment.value;
@@ -18,18 +25,11 @@ const Comment = ({ productData }) => {
             message: Message
         }
         axios.post('http://localhost:5000/usercomment', commentData)
-            .then(res => console.log(res))
+            .then(res => {
+                refetch()
+                console.log(res)})
             .catch(error => console.error(error))
     }
-    const { refetch, data: allcomment } = useQuery({
-        queryKey: ['Data'],
-        queryFn: () =>
-            fetch('http://localhost:5000/allusercomment')
-                    .then((res) => res.json())
-                .catch(error => console.log(error))
-
-
-    })
 
     console.log(allcomment)
     const filterComment = allcomment?.filter((filterData) => filterData?.id == productData)

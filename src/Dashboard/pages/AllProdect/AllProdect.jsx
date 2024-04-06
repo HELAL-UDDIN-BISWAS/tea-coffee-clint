@@ -48,6 +48,7 @@ const AllProdect = () => {
                                 })
                             }
                         })
+                        .caches(error=>console.log(error))
                 }
             });
     }
@@ -78,7 +79,7 @@ const AllProdect = () => {
         }
         axios.put(`https://tea-coffee-server.vercel.app/updateproduct/${Id._id}`, postData)
             .then(res => {
-               
+                refetch();
                     const Toast = Swal.mixin({
                         toast: true,
                         position: "top-end",
