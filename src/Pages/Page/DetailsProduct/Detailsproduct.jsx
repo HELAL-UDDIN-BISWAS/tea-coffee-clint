@@ -6,12 +6,14 @@ import { CloudArrowUp } from "phosphor-react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Proveider/Proveider";
 import Comment from "../../../Components/Comment/Comment";
 
-
+// navigate("//dashboard/perchesproduct");
 
 const Detailsproduct = () => {
+    const navigate = useNavigate();
     const { user } = useContext(AuthContext);
     const productData = useLoaderData();
     const { register, handleSubmit } = useForm();
@@ -43,6 +45,7 @@ const Detailsproduct = () => {
                                     text: "Something went wrong!",
                                     footer: '<a href="#">Why do I have this issue?</a>'
                                 });
+                                navigate("/dashboard/perchesproduct");
                             }
                         })
                         .catch(error => {
@@ -77,7 +80,7 @@ const Detailsproduct = () => {
                     <h3 className="text-2xl text-slate-600">Price: <span className="text-black">{productData.price}</span></h3>
 
                     {/* <button className=" hover:bg-slate-400 bg-slate-300 py-2 px-4 rounded">BY NOW</button> */}
-                    <Button className="items-center justify-center my-8" onClick={onClickTwo} size="md" color="success"><GrShop className="mx-1 items-center" />BY NOW</Button>
+                    <Button className="items-center justify-center my-8" onClick={onClickTwo} size="md" color="success"><GrShop className="mx-1 items-center" />Perches Product</Button>
                     <Modal
                         icon={<CloudArrowUp size={28} color="#1B4DFF" />}
                         size="md"

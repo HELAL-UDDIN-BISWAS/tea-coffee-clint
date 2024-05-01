@@ -5,6 +5,7 @@ import { FcGoogle } from "react-icons/fc";
 import { Button } from "keep-react";
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const SignUp = () => {
     const { createUser, ubdateUser } = useContext(AuthContext);
@@ -93,6 +94,7 @@ const SignUp = () => {
                     <button className="py-3 bg-primary-500 hover:bg-primary-600 text-white px-5 rounded my-2 w-full">SignUp</button>
                 </form>
                 <Button className='my-2 w-full ' size="md" color="success"><FcGoogle className='text-2xl' /></Button>
+                <p>Have An Account <Link className='text-green-400' to="/login">Login</Link></p>
             </div>
 
 

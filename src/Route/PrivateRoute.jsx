@@ -8,8 +8,7 @@ const PrivateRoute = ({children}) => {
       
         const {user,loding}=useContext(AuthContext);
     const location=useLocation();
-    console.log(loding)
-    if(loding){
+     if(loding){
       return <Spinner className='flex h-[90vh] text-center items-center justify-center max-w-6xl mx-auto' color="info" size="lg" />
     }
     console.log(location)

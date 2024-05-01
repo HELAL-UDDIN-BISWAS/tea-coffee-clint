@@ -12,7 +12,7 @@ const Comment = ({ productData }) => {
         const { refetch, data: allcomment } = useQuery({
         queryKey: ['Data'],
         queryFn: () =>
-            fetch('http://localhost:5000/allusercomment')
+            fetch('https://tea-coffee-server.vercel.app/allusercomment')
                     .then((res) => res.json())
                 .catch(error => console.log(error))
     });
@@ -24,7 +24,7 @@ const Comment = ({ productData }) => {
             photoURL: user?.photoURL,
             message: Message
         }
-        axios.post('http://localhost:5000/usercomment', commentData)
+        axios.post('https://tea-coffee-server.vercel.app/usercomment', commentData)
             .then(res => {
                 refetch()
                 console.log(res)})

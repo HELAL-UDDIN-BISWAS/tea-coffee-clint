@@ -4,7 +4,7 @@ import { FcGoogle } from "react-icons/fc";
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../Proveider/Proveider';
 import Swal from 'sweetalert2';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const {loginuser}=useContext(AuthContext);
@@ -52,9 +52,10 @@ const Login = () => {
                         <input type="password" {...register('password')} className="md:w-72 bg-white px-4 py-2 text-lg outline-none border-2 rounded hover:border-gray-600 border-gray-400 duration-200 bg-inherit" placeholder='Inter Your Email' required />
                     </div>
                 </div>
-                <button className="py-3 bg-primary-500 hover:bg-primary-600 text-white px-5 rounded my-2 w-full">SignUp</button>
+                <button className="py-3 bg-primary-500 hover:bg-primary-600 text-white px-5 rounded my-2 w-full">Login</button>
             </form>
             <Button className='my-2 w-full ' size="md" color="success"><FcGoogle className='text-2xl' /></Button>
+            <p>Don't Have An Account <Link className='text-green-400' to="/signup">Sign Up</Link></p>
         </div>
     </div>
     );
