@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
-    const {loginuser}=useContext(AuthContext);
+    const {loginuser,googleSign}=useContext(AuthContext);
     const location = useLocation()
     const navigate = useNavigate()
         const { register, handleSubmit } = useForm();
@@ -30,6 +30,9 @@ const Login = () => {
                     footer: '<a href="#">Why do I have this issue?</a>'
                   });
                 console.error(error)})
+    }
+    let googlesignin=()=>{
+        googleSign()
     }
     const from = location.state?.from?.pathname || '/';
 
@@ -54,7 +57,7 @@ const Login = () => {
                 </div>
                 <button className="py-3 bg-primary-500 hover:bg-primary-600 text-white px-5 rounded my-2 w-full">Login</button>
             </form>
-            <Button className='my-2 w-full ' size="md" color="success"><FcGoogle className='text-2xl' /></Button>
+            <Button onClick={googlesignin} className='my-2 w-full ' size="md" color="success"><FcGoogle className='text-2xl' /></Button>
             <p>Don't Have An Account <Link className='text-green-400' to="/signup">Sign Up</Link></p>
         </div>
     </div>

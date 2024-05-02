@@ -1,29 +1,33 @@
 import React, { createContext, useEffect, useState } from 'react';
 import app from '../Firebase/firebase.init';
-import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, updateProfile, signOut, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, updateProfile, signOut, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 export const AuthContext = createContext(null)
 const Auth = getAuth(app)
 const Proveider = ({ children }) => {
-const [user, setUser]=useState();
-const [loding,setLoading]=useState(true)
+    const [user, setUser] = useState();
+    const [loding, setLoading] = useState(true)
+    const provider = new GoogleAuthProvider();
 
     const createUser = (email, password) => {
         setLoading(true)
         return createUserWithEmailAndPassword(Auth, email, password)
     }
-    const loginuser=(email,password)=>{
+    const loginuser = (email, password) => {
         setLoading(true)
-       return signInWithEmailAndPassword(Auth,email,password)
+        return signInWithEmailAndPassword(Auth, email, password)
     }
- const logout=()=>{
-      return signOut(Auth)
- }
-    const ubdateUser=(name, photo)=>{
+    const googleSign=()=>{
+       return signInWithPopup(Auth,provider)
+    }
+    const logout = () => {
+        return signOut(Auth)
+    }
+    const ubdateUser = (name, photo) => {
         setLoading(true)
-      return updateProfile(Auth.currentUser,{
-        displayName:name,
-        photoURL:photo
+        return updateProfile(Auth.currentUser, {
+            displayName: name,
+            photoURL: photo
         })
     }
 
@@ -32,13 +36,13 @@ const [loding,setLoading]=useState(true)
             console.log(currentUser)
             setUser(currentUser)
             setLoading(false)
-            return ()=>{
+            return () => {
                 subscribe()
             }
         })
     }, [])
 
-    const AuthInfo = { user,createUser,ubdateUser,logout,loginuser,loding }
+    const AuthInfo = { user, createUser, ubdateUser, logout, loginuser, loding, googleSign }
     return (
         <AuthContext.Provider value={AuthInfo}>
             {children}
