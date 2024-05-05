@@ -12,7 +12,7 @@ import {
 import { Link } from "react-router-dom";
 import Skeletons from "../../../../Components/Skeleton/Skeletons";
 const LastAddProduct = () => {
-        const {isLoading, data: lastAddData } = useQuery({
+        const {isLoading, data: lastAddData=[] } = useQuery({
             queryKey: ['data'],
             queryFn: async() =>
             await fetch('https://tea-coffee-server.vercel.app/lastedproduct').then((res) =>

@@ -9,21 +9,23 @@ import {
 } from "phosphor-react";
 import { Button, Card } from "keep-react";
 import { Link } from "react-router-dom";
-import { createContext, useContext } from "react";
+import {useContext } from "react";
 import { AuthContext } from "../../../Proveider/Proveider";
+import allCartData from "../../../Components/CartData/allCartData";
+
 
 const AddToCart = () => {
+    const [refetch,isLoading,cartDatas]=allCartData();
     const{user}=useContext(AuthContext);
-    const { data: cartData } = useQuery({
-        queryKey: ['data'],
-        queryFn: async () =>
-            await fetch('https://tea-coffee-server.vercel.app/cartdata').then(res => res.json())
+    // const { data: cartData=[] } = useQuery({
+    //     queryKey: ['data'],
+    //     queryFn: async () =>
+    //         await fetch('https://tea-coffee-server.vercel.app/cartdata').then(res => res.json())
+    // })
 
-    })
-
-    const userCartData =cartData?.filter(data=>data?.email === user?.email)
+    const userCartData =cartDatas?.filter(data=>data?.email === user?.email)
     console.log(userCartData)
-    console.log(cartData)
+    console.log(cartDatas)
 
     return (
         <div className=" max-w-6xl mx-auto items-center justify-center">
