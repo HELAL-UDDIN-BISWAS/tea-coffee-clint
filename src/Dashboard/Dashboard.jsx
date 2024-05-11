@@ -27,9 +27,9 @@ const Dashboard = () => {
                                 Dashboard
                             </Sidebar.Item>
                         </Link>
-                        <Sidebar.Item href="#" icon={<TreeStructure size={24} />}>
+                        {/* <Sidebar.Item href="#" icon={<TreeStructure size={24} />}>
                             Project Plan
-                        </Sidebar.Item>
+                        </Sidebar.Item> */}
                         <Link to={"addproduct"}>
                             <Sidebar.Item href="#" icon={<BiSolidBookAdd size={24} />}>
                                 Add Product

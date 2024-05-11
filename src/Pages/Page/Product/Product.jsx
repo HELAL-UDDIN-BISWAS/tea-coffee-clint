@@ -37,8 +37,10 @@ const Product = ({ product }) => {
         <div className="">
             <Card
                 className="max-w-xs w-96 overflow-hidden rounded-md shadow-lg"
-                imgSrc={image_url}
-                imgSize="md">
+                // imgSrc={image_url}
+                // imgSize="md" loading="lazy"
+                >
+                    <img className="h-48" src={image_url}  imgSize="md" loading="lazy" alt="" />
                 <Card.Container className="absolute right-3.5 top-3.5 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-metal-50/50">
                     <Heart size={20} weight="bold" color="white" />
                 </Card.Container>

@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
+
 import {
     Badge,
     Button,
@@ -11,15 +11,16 @@ import {
 } from "phosphor-react";
 import { Link } from "react-router-dom";
 import Skeletons from "../../../../Components/Skeleton/Skeletons";
+import axios from "axios";
 const LastAddProduct = () => {
         const {isLoading, data: lastAddData=[] } = useQuery({
             queryKey: ['data'],
-            queryFn: async() =>
-            await fetch('https://tea-coffee-server.vercel.app/lastedproduct').then((res) =>
-                res.json(),
-    
-              ),
+            queryFn: async() =>{
+                const res= await axios.get('https://tea-coffee-server.vercel.app/lastedproduct')
+                return res.data
+            }       
           })
+
           if(isLoading == true){
             return <div className="grid max-w-6xl mx-auto lg:grid-cols-3 md:grid-cols-2 md:items-center gap-3 items-center justify-center text-center">
                 {
@@ -29,14 +30,16 @@ const LastAddProduct = () => {
             </div>
           }
     // isLoading? console.log('loading'):console.log('no loding')
-    console.log(lastAddData)
+    // console.log(lastAddData)
     return (
         <div className="grid lg:grid-cols-3 md:grid-cols-2 md:items-center w-full mx-auto gap-3 items-center justify-center text-center">
             {
                 lastAddData?.map(data=> <Card
                     className="max-w-xs w-96 overflow-hidden rounded-md"
-                    imgSrc={data?.image_url}
-                    imgSize="md">
+                    // imgSrc={data?.image_url}
+                    // imgSize="md" loading="lazy"
+                    >
+                        <img className="h-48" src={data?.image_url}  imgSize="md" loading="lazy" alt="" />
                     <Card.Container className="absolute right-3.5 top-3.5 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-metal-50/50">
                         <Heart size={20} weight="bold" color="white" />
                     </Card.Container>
