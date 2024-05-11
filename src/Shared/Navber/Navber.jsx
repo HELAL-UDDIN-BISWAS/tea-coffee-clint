@@ -54,7 +54,7 @@ const Navber = () => {
   </>
 
   return (
-    <div className="">
+    <div className="sticky top-0 z-20 shadow-slate-700 shadow mb-5">
       <Navbar fluid={true}>
         <Navbar.Container className="flex items-center justify-between">
           <Navbar.Container className="flex items-center">
