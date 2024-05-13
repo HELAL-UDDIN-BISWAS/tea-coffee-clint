@@ -32,7 +32,7 @@ const Prodects = () => {
     return (
         <div className="max-w-6xl mx-auto">
             <div className="my-5 ">
-            <select className="border-solid border-2 border-sky-500 py-2 px-10"
+            <select className="border-solid border-2 rounded cursor-pointer border-sky-500 py-2 px-10"
              onChange={(e) => settype(e.target.value)}>
                 <option disabled selected>Chose One</option>
                 {
